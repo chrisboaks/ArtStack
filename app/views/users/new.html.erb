@@ -1,0 +1,28 @@
+<h2>Create your account</h2>
+
+<form action="<%= users_url %>" method="post">
+  <input
+    type="hidden"
+    name="authenticity_token"
+    value="<%= form_authenticity_token %>"
+    id="authenticity_token">
+
+  <label for="username">Username</label>
+  <input
+    type="text"
+    name="user[username]"
+    value=""
+    id="username">
+
+  <label for="password">Password</label>
+  <input
+    type="text"
+    name="user[password]"
+    value=""
+    id="password">
+
+  <button>Create Account</button>
+
+</form>
+
+<h3>Already have an account? <a href="<%= new_session_url %>">Log in</a></h3>

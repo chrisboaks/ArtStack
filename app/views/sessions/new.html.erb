@@ -1,0 +1,28 @@
+<h2>Login to ArtStack</h2>
+
+<form action="<%= sessions_url %>" method="post">
+  <input
+    type="hidden"
+    name="authenticity_token"
+    value="<%= form_authenticity_token %>"
+    id="authenticity_token">
+
+  <label for="username">Username</label>
+  <input
+    type="text"
+    name="user[username]"
+    value=""
+    id="username">
+
+  <label for="password">Password</label>
+  <input
+    type="text"
+    name="user[password]"
+    value=""
+    id="password">
+
+  <button>Log In</button>
+
+</form>
+
+<h3>Join free to discover and share art!  <a href="<%= new_user_url %>">Join now</a></h3>

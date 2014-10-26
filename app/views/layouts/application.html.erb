@@ -8,13 +8,12 @@
 </head>
 <body>
 
-  <% if signed_in? %>
-  <%= current_user.username %>
-  <%= button_to "Sign Out", session_url, method: :delete %>
-  <% end %>
+  <%= render "layouts/header" %>
   <%= flash[:errors] %>
 
 <%= yield %>
+
+<%= render "layouts/footer" %>
 
 </body>
 </html>
