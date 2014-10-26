@@ -7,10 +7,6 @@
     <%= button_to "Sign Out", session_url, method: :delete %>
   <% end %>
 
-  <% if ENV["RAILS_ENV"] == 'development' %>
-    ArtStack dev mode: <br>
-    logged in: <%= logged_in? %><%= ", as: " + current_user.username if logged_in? %><br>
-  <% end %>
 
-<br>
+
 </header>

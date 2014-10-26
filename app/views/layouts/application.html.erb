@@ -8,8 +8,13 @@
 </head>
 <body>
 
-  <%= render "layouts/header" %>
-  <%= flash[:errors] %>
+<% if ENV["RAILS_ENV"] == 'development' %>
+  <%= render "layouts/devmode_info" %>
+<% end %>
+
+<%= render "layouts/header" %>
+
+<%= flash[:errors] %>
 
 <%= yield %>
 

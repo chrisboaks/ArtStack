@@ -54,6 +54,10 @@ ul {
   list-style: none;
 }
 
+body {
+  width: 100%;
+}
+
 button, a, input {
   cursor: pointer;
 }
@@ -64,4 +68,12 @@ button, a, input {
   display: table;
   content: "";
   clear: both;
+}
+
+div.devmode {
+  display: block;
+  width: 400px;
+  margin: 0 auto;
+  border: 1px solid red;
+  background: red;
 }
