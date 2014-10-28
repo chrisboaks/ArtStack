@@ -1,4 +1,18 @@
-<% require_current_user(@user) %>
+<% require_login %>
 
 <%= @user.username %> is just the best user ever!
+
+
+<% if @user.uploaded_works.size > 0 %>
+<br>
+<%= @user.username %>'s uploaded artworks:
+<ul>
+  <% @user.uploaded_works.each do |artwork| %>
+  <li>
+    <a href="<%= artist_url(artwork.artist) %>"><%= artwork.artist.name %></a>--
+    <a href="<%= artwork.image %>"><%= artwork.title %></a>
+  </li>
+  <% end %>
+</ul>
+<% end %>
 
