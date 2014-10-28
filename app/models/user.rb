@@ -18,6 +18,8 @@ class User < ActiveRecord::Base
   after_initialize :ensure_session_token
 
   has_many :uploaded_works, class_name: 'Artwork', foreign_key: :uploader_id
+  has_many :stacks
+  has_many :stacked_works, through: :stacks, source: :artwork
 
   attr_reader :password
 

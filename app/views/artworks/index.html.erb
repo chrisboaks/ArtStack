@@ -1,1 +1,11 @@
-why am i here
+All the Art!
+
+<ul>
+<% @artworks.each do |artwork| %>
+<li>
+  <a href="<%= artwork_url(artwork) %>"><%= artwork.title %></a>
+</li>
+<% end %>
+
+
+</ul>
