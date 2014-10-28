@@ -1,11 +1,8 @@
 <h2>Login to ArtStack</h2>
 
 <form action="<%= sessions_url %>" method="post">
-  <input
-    type="hidden"
-    name="authenticity_token"
-    value="<%= form_authenticity_token %>"
-    id="authenticity_token">
+
+  <%= render "layouts/auth_token" %>
 
   <label for="username">Username</label>
   <input
