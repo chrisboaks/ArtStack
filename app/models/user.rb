@@ -17,6 +17,8 @@ class User < ActiveRecord::Base
 
   after_initialize :ensure_session_token
 
+  has_many :uploaded_works, class_name: 'Artwork', foreign_key: :uploader_id
+
   attr_reader :password
 
   def self.find_by_credentials(username, password)

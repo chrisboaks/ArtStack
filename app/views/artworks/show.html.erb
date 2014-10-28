@@ -1,5 +1,8 @@
-<%= @artwork.image %>
-<%= @artwork.artist %>
-<%= @artwork.title %>
-<%= @artwork.art_type %>
-<%= @artwork.uploader_id %>
+
+<%= @artwork.artist.name %>
+<br>
+<a href="<%= @artwork.image %>"><%= @artwork.title %></a>
+<br>
+<br>
+<%= @artwork.art_type %><br>
+First stacker: <%= @artwork.uploader.username %>
