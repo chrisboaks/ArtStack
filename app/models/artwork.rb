@@ -15,9 +15,20 @@
 class Artwork < ActiveRecord::Base
 
   validates_presence_of :artist, :title, :art_type
+  validates :art_type, inclusion: { in: %w(
+    painting
+    photograph
+    sculpture
+    performance
+    video
+    installation
+    drawing
+    collage
+    ) }
 
   belongs_to :artist
   belongs_to :uploader, class_name: 'User', foreign_key: :uploader_id
 
 
 end
+

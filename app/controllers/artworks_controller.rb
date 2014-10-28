@@ -6,7 +6,7 @@ class ArtworksController < ApplicationController
   end
 
   def create
-    @artist = Artist.find_or_initialize_by(name: params[:artist_name])
+    @artist = Artist.find_or_initialize_by(name: params[:artist_name].capitalize)
 
     @artwork = @artist.artworks.new(artwork_params)
     @artwork.uploader_id = current_user.id
