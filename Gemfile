@@ -30,6 +30,8 @@ gem 'debugger', group: [:development, :test]
 gem "paperclip", "~> 4.2"
 gem 'annotate', '~> 2.6.5'
 gem 'backbone-on-rails'
+gem 'omniauth-facebook'
+gem 'figaro'
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 

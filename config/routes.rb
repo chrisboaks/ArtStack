@@ -18,6 +18,7 @@
 Rails.application.routes.draw do
 
   root to: "sessions#new"
+  get '/auth/facebook/callback', to: 'oauthcallbacks#facebook'
 
   resources :sessions, only: [:new, :create, :destroy]
   resources :users
