@@ -24,6 +24,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
+# Use debugger
+gem 'debugger', group: [:development, :test]
 
 gem "paperclip", "~> 4.2"
 gem 'annotate', '~> 2.6.5'
@@ -45,6 +47,5 @@ end
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-# Use debugger
-# gem 'debugger', group: [:development, :test]
+
 
