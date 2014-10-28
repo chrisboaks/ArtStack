@@ -11,10 +11,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141026015956) do
+ActiveRecord::Schema.define(version: 20141028144331) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "artists", force: true do |t|
+    t.string   "name",       null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "artists", ["name"], name: "index_artists_on_name", unique: true, using: :btree
+
+  create_table "artworks", force: true do |t|
+    t.string   "image",                           null: false
+    t.integer  "uploader_id"
+    t.integer  "artist_id"
+    t.string   "title",       default: "Unknown"
+    t.string   "art_type",                        null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "artworks", ["art_type"], name: "index_artworks_on_art_type", using: :btree
+  add_index "artworks", ["artist_id"], name: "index_artworks_on_artist_id", using: :btree
+  add_index "artworks", ["uploader_id"], name: "index_artworks_on_uploader_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "username",        null: false
@@ -24,6 +46,7 @@ ActiveRecord::Schema.define(version: 20141026015956) do
     t.datetime "updated_at"
   end
 
-  add_index "users", ["username", "session_token"], name: "index_users_on_username_and_session_token", using: :btree
+  add_index "users", ["session_token"], name: "index_users_on_session_token", unique: true, using: :btree
+  add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
 
 end

@@ -1,0 +1,34 @@
+<form action="<%= artworks_url %>" method="post">
+  <input
+    type="hidden"
+    name="authenticity_token"
+    value="<%= form_authenticity_token %>"
+    id="authenticity_token">
+
+  <label for="image">Image</label>
+  <input type="text" name="artwork[image]" value="" id="image">
+
+  <label for="artist">Artist</label>
+  <input type="text" name="artist_name" value="" id="artist">
+
+  <label for="title">Title</label>
+  <input type="text" name="artwork[title]" value="" id="title">
+
+  <label for="type">Type</label>
+  <select name="artwork[art_type]" id="type" multiple onchange="" size="1">
+    <option value="painting">painting</option>
+    <option value="photograph">photograph</option>
+    <option value="sculpture">sculpture</option>
+    <option value="performance">performance</option>
+    <option value="video">video</option>
+    <option value="installation">installation</option>
+    <option value="drawing">drawing</option>
+    <option value="collage">collage</option>
+  </select>
+
+<button>Upload</button>
+
+
+
+
+</form>
