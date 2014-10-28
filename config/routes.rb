@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   resources :users
   resources :artworks
   resources :artists
+  resources :stacks
 
 end
 

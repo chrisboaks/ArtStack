@@ -28,6 +28,8 @@ class Artwork < ActiveRecord::Base
 
   belongs_to :artist
   belongs_to :uploader, class_name: 'User', foreign_key: :uploader_id
+  has_many :stacks
+  has_many :stacking_users, through: :stacks, source: :user
 
 
 end
