@@ -64,7 +64,7 @@ button, a, input {
 
 /* CLEARFIX */
 
-.group: after {
+.group:after {
   display: table;
   content: "";
   clear: both;
