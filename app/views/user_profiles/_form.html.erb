@@ -1,7 +1,9 @@
 <h2>Edit your profile</h2>
 
-<form action="<%= @action %>" method="<%= @method %>">
+<form action="<%= @action %>" method="post">
 <%= render "layouts/auth_token" %>
+<%= render "layouts/patch_input" %>
+<input type="hidden" name="some_name" value="" id="some_name">
 
 <label for="username" class="input">Username</label>
 <input type="text" name="user_profile[username]" value="<%= @user_profile.username %>" id="username">
@@ -16,7 +18,7 @@
 <input type="text" name="user_profile[location]" value="<%= @user_profile.location %>" id="location">
 
 <label for="bio" class="input">Bio</label>
-<textarea name="user_profile[bio]" value="<%= @user_profile.bio %>" id="bio" rows="8" cols="40"></textarea>
+<textarea name="user_profile[bio]" id="bio" rows="8" cols="40"><%= @user_profile.bio %></textarea>
 <br>
 
 

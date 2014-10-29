@@ -148,7 +148,7 @@ a {
 
 
 
-input:not([type='submit']) {
+input:not([type='submit']), textarea {
   border: 1px solid black;
   display: block;
   padding: 8px;
