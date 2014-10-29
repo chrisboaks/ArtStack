@@ -8,6 +8,8 @@
 #  session_token   :string(255)
 #  created_at      :datetime
 #  updated_at      :datetime
+#  provider        :string(255)
+#  uid             :string(255)
 #
 
 class User < ActiveRecord::Base
