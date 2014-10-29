@@ -1,28 +1,8 @@
-<% require_logout %>
+<% @button_name = "Create Account" %>
+<% @action = users_url %>
 
 <h2>Create your account</h2>
-<a href="/auth/facebook">Login with Facebook</a>
 
-<form action="<%= users_url %>" method="post">
-
-  <%= render "layouts/auth_token" %>
-
-  <label for="username">Username</label>
-  <input
-    type="text"
-    name="user[username]"
-    value=""
-    id="username">
-
-  <label for="password">Password</label>
-  <input
-    type="password"
-    name="user[password]"
-    value=""
-    id="password">
-
-  <button>Create Account</button>
-
-</form>
+<%= render "layouts/user_form" %>
 
 <h3>Already have an account? <a href="<%= new_session_url %>">Log in</a></h3>
