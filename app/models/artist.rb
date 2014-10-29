@@ -14,14 +14,4 @@ class Artist < ActiveRecord::Base
 
   has_many :artworks
 
-  # def self.artist_id_of(name)
-  #   @artist = Artist.find_by_name(name)
-  #   if @artist
-  #     return @artist.id
-  #   else
-  #     @artist = Artist.create(name: name)
-  #     return @artist.id
-  #   end
-  # end
-
 end

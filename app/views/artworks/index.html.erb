@@ -3,6 +3,7 @@
 <ul>
 <% @artworks.each do |artwork| %>
 <li>
+  <a href="<%= artist_url(artwork) %>"><%= artwork.artist.name %></a>
   <a href="<%= artwork_url(artwork) %>"><%= artwork.title %></a>
 </li>
 <% end %>
