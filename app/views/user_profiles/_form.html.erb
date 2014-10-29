@@ -1,0 +1,72 @@
+<h2>Edit your profile</h2>
+
+<form action="<%= @action %>">
+
+<label for="username" class="input">Username</label>
+<input type="text" name="user_profile[username]" value="<%= @user_profile.username %>" id="username">
+
+<label for="first_name" class="input">First Name</label>
+<input type="text" name="user_profile[first_name]" value="<%= @user_profile.first_name %>" id="first_name">
+
+<label for="last_name" class="input">Last Name</label>
+<input type="text" name="user_profile[last_name]" value="<%= @user_profile.last_name %>" id="last_name">
+
+<label for="location" class="input">Location</label>
+<input type="text" name="user_profile[location]" value="<%= @user_profile.location %>" id="location">
+
+<label for="bio" class="input">Bio</label>
+<textarea name="user_profile[bio]" value="<%= @user_profile.bio %>" id="bio" rows="8" cols="40"></textarea>
+<br>
+
+
+<h3>Are you a:</h3>
+<ul class='checkbox-list'>
+<li>
+<input type="hidden" name="user_profile[is_artist]" value="false" id="is_artist">
+<input type="checkbox" name="user_profile[is_artist]" value="true" id="is_artist" <%= 'CHECKED' if @user_profile.is_artist  %>>
+<label for="is_artist" class="checkbox-label">Artist</label>
+</li>
+<li>
+<input type="hidden" name="user_profile[is_art_professional]" value="false" id="is_art_professional">
+<input type="checkbox" name="user_profile[is_art_professional]" value="true" id="is_art_professional" <%= 'CHECKED' if @user_profile.is_art_professional  %>>
+<label for="is_art_professional" class="checkbox-label">Art Professional</label>
+</li>
+<li>
+<input type="hidden" name="user_profile[is_collector]" value="false" id="is_collector">
+<input type="checkbox" name="user_profile[is_collector]" value="true" id="is_collector" <%= 'CHECKED' if @user_profile.is_collector  %>>
+<label for="is_collector" class="checkbox-label">Collector</label>
+</li>
+<li>
+<input type="hidden" name="user_profile[is_art_lover]" value="false" id="is_art_lover">
+<input type="checkbox" name="user_profile[is_art_lover]" value="true" id="is_art_lover" <%= 'CHECKED' if @user_profile.is_art_lover  %>>
+<label for="is_art_lover" class="checkbox-label">Art Lover</label>
+</li>
+<li>
+<input type="hidden" name="user_profile[is_curator]" value="false" id="is_curator">
+<input type="checkbox" name="user_profile[is_curator]" value="true" id="is_curator" <%= 'CHECKED' if @user_profile.is_curator  %>>
+<label for="is_curator" class="checkbox-label">Curator</label>
+</li>
+<li>
+<input type="hidden" name="user_profile[is_art_writer]" value="false" id="is_art_writer">
+<input type="checkbox" name="user_profile[is_art_writer]" value="true" id="is_art_writer" <%= 'CHECKED' if @user_profile.is_art_writer  %>>
+<label for="is_art_writer" class="checkbox-label">Art Writer</label>
+</li>
+<li>
+<input type="hidden" name="user_profile[is_student]" value="false" id="is_student">
+<input type="checkbox" name="user_profile[is_student]" value="true" id="is_student" <%= 'CHECKED' if @user_profile.is_student  %>>
+<label for="is_student" class="checkbox-label">Student</label>
+</li>
+</ul>
+
+
+<label for="website" class="input">Website</label>
+<input type="text" name="user_profile[website]" value="<%= @user_profile.website %>" id="website">
+
+
+<button>Submit!</button>
+
+</form>
+
+
+
+

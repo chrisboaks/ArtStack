@@ -1,18 +1,51 @@
 # == Route Map
 #
-#      Prefix Verb   URI Pattern               Controller#Action
-#        root GET    /                         sessions#new
-#    sessions POST   /sessions(.:format)       sessions#create
-# new_session GET    /sessions/new(.:format)   sessions#new
-#     session DELETE /sessions/:id(.:format)   sessions#destroy
-#       users GET    /users(.:format)          users#index
-#             POST   /users(.:format)          users#create
-#    new_user GET    /users/new(.:format)      users#new
-#   edit_user GET    /users/:id/edit(.:format) users#edit
-#        user GET    /users/:id(.:format)      users#show
-#             PATCH  /users/:id(.:format)      users#update
-#             PUT    /users/:id(.:format)      users#update
-#             DELETE /users/:id(.:format)      users#destroy
+#                 Prefix Verb   URI Pattern                                      Controller#Action
+#                   root GET    /                                                sessions#new
+# auth_facebook_callback GET    /auth/facebook/callback(.:format)                oauthcallbacks#facebook
+#               sessions POST   /sessions(.:format)                              sessions#create
+#            new_session GET    /sessions/new(.:format)                          sessions#new
+#                session DELETE /sessions/:id(.:format)                          sessions#destroy
+#     user_user_profiles GET    /users/:user_id/user_profiles(.:format)          user_profiles#index
+#                        POST   /users/:user_id/user_profiles(.:format)          user_profiles#create
+#  new_user_user_profile GET    /users/:user_id/user_profiles/new(.:format)      user_profiles#new
+# edit_user_user_profile GET    /users/:user_id/user_profiles/:id/edit(.:format) user_profiles#edit
+#      user_user_profile GET    /users/:user_id/user_profiles/:id(.:format)      user_profiles#show
+#                        PATCH  /users/:user_id/user_profiles/:id(.:format)      user_profiles#update
+#                        PUT    /users/:user_id/user_profiles/:id(.:format)      user_profiles#update
+#                        DELETE /users/:user_id/user_profiles/:id(.:format)      user_profiles#destroy
+#                  users GET    /users(.:format)                                 users#index
+#                        POST   /users(.:format)                                 users#create
+#               new_user GET    /users/new(.:format)                             users#new
+#              edit_user GET    /users/:id/edit(.:format)                        users#edit
+#                   user GET    /users/:id(.:format)                             users#show
+#                        PATCH  /users/:id(.:format)                             users#update
+#                        PUT    /users/:id(.:format)                             users#update
+#                        DELETE /users/:id(.:format)                             users#destroy
+#               artworks GET    /artworks(.:format)                              artworks#index
+#                        POST   /artworks(.:format)                              artworks#create
+#            new_artwork GET    /artworks/new(.:format)                          artworks#new
+#           edit_artwork GET    /artworks/:id/edit(.:format)                     artworks#edit
+#                artwork GET    /artworks/:id(.:format)                          artworks#show
+#                        PATCH  /artworks/:id(.:format)                          artworks#update
+#                        PUT    /artworks/:id(.:format)                          artworks#update
+#                        DELETE /artworks/:id(.:format)                          artworks#destroy
+#                artists GET    /artists(.:format)                               artists#index
+#                        POST   /artists(.:format)                               artists#create
+#             new_artist GET    /artists/new(.:format)                           artists#new
+#            edit_artist GET    /artists/:id/edit(.:format)                      artists#edit
+#                 artist GET    /artists/:id(.:format)                           artists#show
+#                        PATCH  /artists/:id(.:format)                           artists#update
+#                        PUT    /artists/:id(.:format)                           artists#update
+#                        DELETE /artists/:id(.:format)                           artists#destroy
+#                 stacks GET    /stacks(.:format)                                stacks#index
+#                        POST   /stacks(.:format)                                stacks#create
+#              new_stack GET    /stacks/new(.:format)                            stacks#new
+#             edit_stack GET    /stacks/:id/edit(.:format)                       stacks#edit
+#                  stack GET    /stacks/:id(.:format)                            stacks#show
+#                        PATCH  /stacks/:id(.:format)                            stacks#update
+#                        PUT    /stacks/:id(.:format)                            stacks#update
+#                        DELETE /stacks/:id(.:format)                            stacks#destroy
 #
 
 Rails.application.routes.draw do
@@ -23,7 +56,7 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
 
   resources :users do
-    resources :user_profile
+    resources :user_profiles
   end
 
   resources :artworks, :artists, :stacks

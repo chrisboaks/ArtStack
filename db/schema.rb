@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141029161740) do
+ActiveRecord::Schema.define(version: 20141029182155) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,13 +54,13 @@ ActiveRecord::Schema.define(version: 20141029161740) do
     t.text     "last_name"
     t.text     "location"
     t.text     "bio"
-    t.boolean  "artist"
-    t.boolean  "art_professional"
-    t.boolean  "collector"
-    t.boolean  "art_lover"
-    t.boolean  "curator"
-    t.boolean  "art_writer"
-    t.boolean  "student"
+    t.boolean  "is_artist"
+    t.boolean  "is_art_professional"
+    t.boolean  "is_collector"
+    t.boolean  "is_art_lover"
+    t.boolean  "is_curator"
+    t.boolean  "is_art_writer"
+    t.boolean  "is_student"
     t.text     "website"
     t.integer  "user_id"
     t.datetime "created_at"
