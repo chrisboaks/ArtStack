@@ -40,7 +40,7 @@ time, mark, audio, video {
 
 /* RESET */
 
-html, body, div, span, header, footer, menu, nav, section,
+html, body, div, span, header, footer, menu, nav, section, input,
 h1, h2, h3, p, a, img, ul, li, form, label, caption, article {
   margin: 0;
   padding: 0;
@@ -76,6 +76,45 @@ div.devmode {
   margin: 0 auto;
   border: 1px solid red;
   background: red;
+}
+
+body {
+  width: 700px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+header {
+  background: #ddd;
+  padding: 25px;
+}
+
+header div{
+  display: block;
+  float: left;
+  margin-top: 0;
+}
+
+header.group ul {
+  display: block;
+  float: right;
+  margin-top: 0;
+}
+
+header li {
+  float: left;
+  padding: 5px;
+}
+
+h1 {
+  font-size: 40px;
+  padding: 20px;
+}
+
+input[type='submit'] {
+  padding: 15px;
+  font-size: 15px;
+  border-radius: 10px;
 }
 
 
