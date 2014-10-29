@@ -1,6 +1,6 @@
-<!--REDIRECT TO EDIT IF PROFILE EXISTS -->
+<!--REDIRECT TO NEW IF NO PROFILE EXISTS -->
 
 <% @action = user_user_profiles_url(current_user) %>
-<% @method = 'post' %>
+<% @method = 'patch' %>
 
 <%= render 'form' %>
