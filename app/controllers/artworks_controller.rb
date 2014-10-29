@@ -20,6 +20,15 @@ class ArtworksController < ApplicationController
     end
   end
 
+  def show
+    @artwork = Artwork.find(params[:id])
+  end
+
+  def index
+    @artworks = Artwork.all
+  end
+
+
   def edit
   end
 
@@ -27,14 +36,6 @@ class ArtworksController < ApplicationController
   end
 
   def destroy
-  end
-
-  def show
-    @artwork = Artwork.find(params[:id])
-  end
-
-  def index
-    @artworks = Artwork.all
   end
 
   private
