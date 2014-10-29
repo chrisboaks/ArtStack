@@ -1,4 +1,4 @@
-<% require_current_user %>
+<% require_current_user(User.find(params[:user_id])) %>
 
 <% @action = user_user_profiles_url(current_user) %>
 <% @method = 'patch' %>
