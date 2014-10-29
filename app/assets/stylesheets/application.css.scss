@@ -111,10 +111,18 @@ h1 {
   padding: 20px;
 }
 
-input[type='submit'] {
+header input[type='submit'] {
   padding: 15px;
   font-size: 15px;
   border-radius: 10px;
+  border: 1px solid black;
 }
 
+body .input {
+  display: block;
+}
+
+body input.input {
+  border: 1px solid black;
+}
 
