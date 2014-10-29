@@ -38,13 +38,16 @@ time, mark, audio, video {
 }
 */
 
-/* RESET */
+/* SETUP */
 
 html, body, div, span, header, footer, menu, nav, section, input,
-h1, h2, h3, p, a, img, ul, li, form, label, caption, article {
+h1, h2, h3, p, a, img, ul, li, form, label, caption, article, button {
   margin: 0;
   padding: 0;
   border: 0;
+  color: inherit;
+  background: transparent;
+  text-decoration: inherit;
   font-size: 100%;
   font: inherit;
   font-family: sans-serif;
@@ -62,7 +65,9 @@ button, a, input {
   cursor: pointer;
 }
 
-/* CLEARFIX */
+textarea, input {
+  outline: none;
+}
 
 .group:after {
   display: table;
@@ -70,7 +75,9 @@ button, a, input {
   clear: both;
 }
 
-div.devmode {
+/* STYLES */
+
+div.devmode {                               //delete?
   display: block;
   width: 400px;
   margin: 0 auto;
@@ -81,29 +88,33 @@ div.devmode {
 body {
   width: 700px;
   margin: 0 auto;
-  margin-top: 50px;
 }
 
 header {
   background: #ddd;
   padding: 25px;
+  margin-bottom: 10px;
+
+  div {
+    display: block;
+    float: left;
+    margin-top: 0;
+  }
+
+  ul {
+    display: block;
+    float: right;
+    margin-top: 0;
+  }
+
+  li {
+    float: left;
+    padding: 5px;
+  }
 }
 
-header div{
-  display: block;
-  float: left;
-  margin-top: 0;
-}
-
-header.group ul {
-  display: block;
-  float: right;
-  margin-top: 0;
-}
-
-header li {
-  float: left;
-  padding: 5px;
+main {
+  margin: 25px;
 }
 
 h1 {
@@ -111,18 +122,45 @@ h1 {
   padding: 20px;
 }
 
-header input[type='submit'] {
-  padding: 15px;
-  font-size: 15px;
-  border-radius: 10px;
-  border: 1px solid black;
+h2 {
+  font-size: 30px;
 }
 
-body .input {
+h3 {
+  font-size: 20px;
+}
+
+a {
+  color: purple;
+
+  &:hover {
+    color: blue;
+  }
+}
+
+
+
+input:not([type='submit']) {
+  border: 1px solid black;
   display: block;
+  padding: 8px;
+  border-radius: 3px;
+
+  &:focus {
+    border: 1px solid green;
+  }
 }
 
-body input.input {
-  border: 1px solid black;
+button, input[type='submit'] {
+  padding: 5px 15px;
+  font-size: 16px;
+  background: #ccc;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+label.input {
+  display: block;
+  margin: 10px 0 0 0;
 }
 
