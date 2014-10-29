@@ -20,6 +20,7 @@ class User < ActiveRecord::Base
   has_many :uploaded_works, class_name: 'Artwork', foreign_key: :uploader_id
   has_many :stacks
   has_many :stacked_works, through: :stacks, source: :artwork
+  has_one :user_profile
 
   attr_reader :password
 

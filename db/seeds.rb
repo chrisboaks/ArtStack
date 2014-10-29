@@ -21,7 +21,7 @@ lewitt = Artist.create(name: 'Sol Lewitt')
 Artwork.create([
   {image: 'http://erikaunapuu.files.wordpress.com/2013/05/picasso-girl-before-a-mirror.jpeg', uploader: me, artist: picasso, title: 'Girl Before a Mirror', art_type: 'painting'},
   {image: 'http://cp91279.biography.com/1000509261001/1000509261001_1910637818001_TDIH-Picasso-Guernica.jpg', uploader: me, artist: picasso, title: 'Guernica', art_type: 'painting'},
-  {image: 'http://upload.wikimedia.org/wikipedia/commons/c/ce/Marcel_Duchamp.jpg', uploader: me, artist_id: duschamp, title: 'Fountain', art_type: 'sculpture'},
+  {image: 'http://upload.wikimedia.org/wikipedia/commons/c/ce/Marcel_Duchamp.jpg', uploader: me, artist: duschamp, title: 'Fountain', art_type: 'sculpture'},
   {image: 'http://upload.wikimedia.org/wikipedia/en/c/c0/Duchamp_-_Nude_Descending_a_Staircase.jpg', uploader: me, artist: duschamp, title: 'Nude Descending a Staircase', art_type: 'painting'},
   {image: 'http://www.moma.org/collection_images/resized/377/w500h420/CRI_136377.jpg', uploader: me, artist: johns, title: 'Flag', art_type: 'painting'},
   {image: 'http://www.tate.org.uk/art/images/work/T/T00/T00454_10.jpg', uploader: me, artist: johns, title: '0-9', art_type: 'painting'},

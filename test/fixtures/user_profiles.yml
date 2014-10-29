@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  username: MyText
+  first_name: MyText
+  last_name: MyText
+  location: MyText
+  bio: MyText
+  artist: false
+  art_professional: false
+  collector: false
+  art_lover: false
+  curator: false
+  art_writer: false
+  student: false
+  website: MyText
+  user_id: 
+
+two:
+  username: MyText
+  first_name: MyText
+  last_name: MyText
+  location: MyText
+  bio: MyText
+  artist: false
+  art_professional: false
+  collector: false
+  art_lover: false
+  curator: false
+  art_writer: false
+  student: false
+  website: MyText
+  user_id: 
