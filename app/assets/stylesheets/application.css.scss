@@ -70,7 +70,7 @@ textarea, input {
 }
 
 .group:after {
-  display: table;
+  display: block;
   content: "";
   clear: both;
 }
@@ -85,8 +85,13 @@ div.devmode {                               //delete?
   background: red;
 }
 
+div.welcome-user {
+  display: relative;
+  float: right;
+  margin: 0 10px;
+}
+
 body {
-  width: 700px;
   margin: 0 auto;
 }
 
@@ -114,6 +119,7 @@ header {
 }
 
 main {
+  width: 700px;
   margin: 25px;
 }
 

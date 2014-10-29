@@ -1,19 +1,21 @@
 <header class="group">
 
-  <div class="logo">
-  <a href="<%= artworks_url %>"><img src="<%= asset_path 'logo-small.png' %>"></img></a>
-  </div>
-
   <% if logged_in? %>
-    <%= current_user.username %>
-    <ul>
+  <ul>
     <li><%= button_to "Explore", artworks_url, method: :get %></li>
     <li><%= button_to "Add Art", new_artwork_url, method: :get %></li>
-    <li><%= button_to "Sign Out", session_url(current_user), method: :delete %></li>
     <li><%= button_to "Edit Profile", edit_user_user_profiles_url(current_user), method: :get %></li>
-    </ul>
+    <li><%= button_to "Sign Out", session_url(current_user), method: :delete %></li>
+  </ul>
   <% end %>
 
-
+  <div class="logo">
+    <a href="<%= artworks_url %>"><img src="<%= asset_path 'logo-small.png' %>"></img></a>
+  </div>
 
 </header>
+<% if logged_in? %>
+<div class="welcome-user group">
+  Welcome, <%= current_user.username %>!
+</div>
+<% end %>

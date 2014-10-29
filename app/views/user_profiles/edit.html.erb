@@ -1,4 +1,4 @@
-<!--REDIRECT TO NEW IF NO PROFILE EXISTS -->
+<% require_current_user %>
 
 <% @action = user_user_profiles_url(current_user) %>
 <% @method = 'patch' %>
