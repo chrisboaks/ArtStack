@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141028231109) do
+ActiveRecord::Schema.define(version: 20141029161740) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +47,27 @@ ActiveRecord::Schema.define(version: 20141028231109) do
 
   add_index "stacks", ["artwork_id"], name: "index_stacks_on_artwork_id", using: :btree
   add_index "stacks", ["user_id"], name: "index_stacks_on_user_id", using: :btree
+
+  create_table "user_profiles", force: true do |t|
+    t.text     "username"
+    t.text     "first_name"
+    t.text     "last_name"
+    t.text     "location"
+    t.text     "bio"
+    t.boolean  "artist"
+    t.boolean  "art_professional"
+    t.boolean  "collector"
+    t.boolean  "art_lover"
+    t.boolean  "curator"
+    t.boolean  "art_writer"
+    t.boolean  "student"
+    t.text     "website"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "user_profiles", ["user_id"], name: "index_user_profiles_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "username",        null: false

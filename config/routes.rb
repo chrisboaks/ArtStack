@@ -21,10 +21,12 @@ Rails.application.routes.draw do
   get '/auth/facebook/callback', to: 'oauthcallbacks#facebook'
 
   resources :sessions, only: [:new, :create, :destroy]
-  resources :users
-  resources :artworks
-  resources :artists
-  resources :stacks
+
+  resources :users do
+    resources :user_profile
+  end
+
+  resources :artworks, :artists, :stacks
 
 end
 
