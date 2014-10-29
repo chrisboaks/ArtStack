@@ -44,13 +44,13 @@ class UserProfilesController < ApplicationController
       :last_name,
       :location,
       :bio,
-      :artist,
-      :art_professional,
-      :collector,
-      :art_lover,
-      :curator,
-      :art_writer,
-      :student,
+      :is_artist,
+      :is_art_professional,
+      :is_collector,
+      :is_art_lover,
+      :is_curator,
+      :is_art_writer,
+      :is_student,
       :website
     )
   end
