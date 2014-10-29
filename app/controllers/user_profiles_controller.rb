@@ -7,8 +7,8 @@ class UserProfilesController < ApplicationController
 
   def create
     @user_profile = UserProfile.new(user: current_user)
-    if @user_profile.create(user_profile_params)
-      redirect_to user_profile_url(@user)
+    if @user_profile.save(user_profile_params)
+      redirect_to user_url(@user_profile.user_id)
     else
       flash[:errors] = @user_profile.errors.full_messages
       render :new
@@ -17,7 +17,7 @@ class UserProfilesController < ApplicationController
 
   private
   def user_profile_params
-    params.require(user_profile).permit(
+    params.require(:user_profile).permit(
       :username,
       :first_name,
       :last_name,

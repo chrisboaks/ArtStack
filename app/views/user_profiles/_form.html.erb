@@ -1,6 +1,7 @@
 <h2>Edit your profile</h2>
 
-<form action="<%= @action %>">
+<form action="<%= @action %>" method="post">
+<%= render "layouts/auth_token" %>
 
 <label for="username" class="input">Username</label>
 <input type="text" name="user_profile[username]" value="<%= @user_profile.username %>" id="username">
