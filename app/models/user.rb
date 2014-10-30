@@ -3,7 +3,7 @@
 # Table name: users
 #
 #  id              :integer          not null, primary key
-#  username        :string(255)      not null
+#  email        :string(255)      not null
 #  password_digest :string(255)      not null
 #  session_token   :string(255)
 #  created_at      :datetime
@@ -14,8 +14,8 @@
 
 class User < ActiveRecord::Base
 
-  # validates_presence_and_uniqueness_of :username
-  # validates :password, length: { minimum: 6, allow_nil: true }
+  # validates_presence_and_uniqueness_of :email
+  validates :password, length: { minimum: 6, allow_nil: true }
 
   after_initialize :ensure_session_token
 
@@ -26,8 +26,8 @@ class User < ActiveRecord::Base
 
   attr_reader :password
 
-  def self.find_by_credentials(username, password)
-    @user = User.find_by_username(username)
+  def self.find_by_credentials(email, password)
+    @user = User.find_by_email(email)
     @user && @user.is_password?(password) ? @user : nil
   end
 
@@ -37,7 +37,6 @@ class User < ActiveRecord::Base
     if user
       return user
     else
-      options[:username] = SecureRandom.urlsafe_base64
       options[:password] = SecureRandom.urlsafe_base64
       user = User.create(options)
     end
