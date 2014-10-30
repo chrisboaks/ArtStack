@@ -1,11 +1,11 @@
 <% require_login %>
 
-<%= @user.username %> is just the best user ever!
+<%= @user.email %> is just the best user ever!
 
 
 <% if @user.uploaded_works.size > 0 %>
 <br>
-<%= @user.username %>'s uploaded artworks:
+<%= @user.email %>'s uploaded artworks:
 <ul>
   <% @user.uploaded_works.each do |artwork| %>
   <li>

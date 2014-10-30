@@ -1,13 +1,15 @@
 <header class="group">
-
-  <% if logged_in? %>
   <ul>
     <li><%= button_to "Explore", artworks_url, method: :get %></li>
+    <% if logged_in? %>
     <li><%= button_to "Add Art", new_artwork_url, method: :get %></li>
     <li><%= button_to "Edit Profile", edit_user_user_profiles_url(current_user), method: :get %></li>
-    <li><%= button_to "Sign Out", session_url(current_user), method: :delete %></li>
+    <li><%= button_to "Log Out", session_url(current_user), method: :delete %></li>
+    <% else %>
+    <li><%= button_to "Log In", new_session_url, method: :get %></li>
+    <li><%= button_to "Sign Up", new_user_url, method: :get %></li>
+    <% end %>
   </ul>
-  <% end %>
 
   <div class="logo">
     <a href="<%= artworks_url %>"><img src="<%= asset_path 'logo-small.png' %>"></img></a>
@@ -16,6 +18,6 @@
 </header>
 <% if logged_in? %>
 <div class="welcome-user group">
-  Welcome, <%= current_user.username %>!
+  Welcome, <%= current_user.email %>!
 </div>
 <% end %>
