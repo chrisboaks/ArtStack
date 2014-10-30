@@ -1,5 +1,10 @@
+<ul>
+<% artworks.each(function(artwork) { %>
+  <li>
 
-<% artworks.forEach(function(artwork) { %>
-
-
+    <%= artwork.attributes %>
+     <a href="/#artist/<%= artwork.attributes.artist.get('id') %>"><%= artwork.attributes.artist.name %></a>--
+     <a href="<%= artwork.escape('image') %>"><%= artwork.escape('title') %></a>
+  </li>
 <% }) %>
+</ul>

@@ -24,8 +24,8 @@
 #
 
 Rails.application.routes.draw do
-
-  root to: "sessions#new"
+  root to: "artworks#index"
+  # root to: "sessions#new"
   get '/auth/facebook/callback', to: 'oauthcallbacks#facebook'
 
   resources :sessions, only: [:new, :create, :destroy]
@@ -36,7 +36,12 @@ Rails.application.routes.draw do
 
   resources :artworks, only: [:new, :create, :show, :index]
   resources :artists, only: [:show, :index]
-  resources :stacks, only: [:create, :destroy]
+
+  namespace :api, defaults: { format: :json } do
+    resources :artworks, only: [:new, :create, :show, :index]
+    resources :stacks, only: [:create, :destroy]
+  end
+
 
 end
 

@@ -4,9 +4,11 @@ window.ArtStack = {
   Views: {},
   Routers: {},
   initialize: function() {
-    new ArtStack.Routers.Router({
-      $rootEl: $("#backbone-content")
+    new ArtStack.Routers.ArtworksRouter({
+      $rootEl: $("main")
     });
+    ArtStack.artworks = new ArtStack.Collections.Artworks();
+    ArtStack.artworks.fetch();
     Backbone.history.start();
   }
 };
