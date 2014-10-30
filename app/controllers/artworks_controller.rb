@@ -25,17 +25,7 @@ class ArtworksController < ApplicationController
   end
 
   def index
-    @artworks = Artwork.all
-  end
-
-
-  def edit
-  end
-
-  def update
-  end
-
-  def destroy
+    @artworks = Artwork.includes(:artist).all
   end
 
   private
