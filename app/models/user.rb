@@ -43,6 +43,20 @@ class User < ActiveRecord::Base
     user
   end
 
+  def self.moniker(user)
+    profile = user.user_profile
+
+    if profile && profile.first_name != ""
+      moniker = profile.first_name
+    elsif profile && profile.username != ""
+      moniker = profile.username
+    else
+      moniker = user.email
+    end
+
+    moniker
+  end
+
   def password=(password)
     @password = password
     self.password_digest = BCrypt::Password.create(password)
