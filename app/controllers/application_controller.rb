@@ -7,10 +7,15 @@ class ApplicationController < ActionController::Base
                 :logged_in?,
                 :require_login,
                 :require_logout,
-                :require_current_user
+                :require_current_user,
+                :user_moniker
 
   def current_user
     @current_user ||= User.find_by_session_token(session[:session_token])
+  end
+
+  def user_moniker(user)
+    User.moniker(user)
   end
 
   def login(user)
