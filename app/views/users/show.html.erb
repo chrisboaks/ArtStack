@@ -1,6 +1,6 @@
 <% require_login %>
 
-<%= user_moniker(@user) %> is just the best user ever!
+<h1><%= user_moniker(@user) %> is just the best user ever!</h1>
 
 
 <% if @user.uploaded_works.size > 0 %>
