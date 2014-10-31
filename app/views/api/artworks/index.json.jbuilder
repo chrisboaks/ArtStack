@@ -6,3 +6,4 @@ json.array! @artworks do |artwork|
   end
 end
 
+# good

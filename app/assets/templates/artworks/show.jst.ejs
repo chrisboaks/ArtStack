@@ -1,2 +1,3 @@
-you are here
-<%= artwork.title %>
+<a href="<%= artwork.escape("image") %>"><%= artwork.escape("title") %></a>
+<a href="#artists/<%= artist.get('id') %>"><%= artwork.artist.escape("name") %></a>
+

@@ -1,0 +1,8 @@
+Backbone artists!
+<ul>
+<% artists.each(function(artist) { %>
+<li>
+  <a href="/#artists/<%= artist.get('id') %>"><%= artist.escape("name") %></a>
+</li>
+<% }); %>
+</ul>

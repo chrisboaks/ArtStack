@@ -3,7 +3,7 @@ ArtStack.Models.User = Backbone.Model.extend({
 
   parse: function (json) {
     if (json.user_profile) {
-      this.user_profile = new ArtStack.Models.UserProfile(json.user_profile, {parse: true});
+      this.user_profile = new ArtStack.Models.UserProfile(json.user_profile, { parse: true });
       delete json.user_profile;
     }
 
