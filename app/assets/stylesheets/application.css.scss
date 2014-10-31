@@ -86,7 +86,6 @@ body {
 header {
   background: #ddd;
   padding: 25px;
-  margin-bottom: 10px;
 
   div {
     display: block;
@@ -101,9 +100,11 @@ header {
   }
 
   li {
+    display: inline;
     float: left;
     padding: 5px;
   }
+
 }
 
 main {
@@ -112,25 +113,27 @@ main {
 }
 
 h1 {
-  font-size: 40px;
+  font-size: 20px;
   padding: 20px;
 }
 
 h2 {
-  font-size: 30px;
+  font-size: 16px;
   padding-top: 10px;
 }
 
 h3 {
-  font-size: 20px;
+  font-size: 14px;
   padding-top: 10px;
 }
 
 a {
-  color: purple;
+  color: black;
+  text-decoration: underline;
 
   &:hover {
     color: blue;
+    text-decoration: none;
   }
 }
 
@@ -144,19 +147,19 @@ div {
     border: 1px solid red;
     background: red;
   }
+}
 
-  .welcome-user {
-    display: relative;
-    float: right;
-    margin: 0 10px;
-  }
+#welcome-user {
+  display: relative;
+  float: right;
+  padding: 5px 10px 0 0;
+}
 
-  .separator {
-    border-top: 1px solid #ccc;
-    height: 1px;
-    margin: 20px auto;
-    width: 420px;
-  }
+br.separator {
+  border-top: 1px solid #ccc;
+  height: 1px;
+  margin: 20px auto;
+  width: 420px;
 }
 
 /* INPUTS */
@@ -167,7 +170,6 @@ input:not([type='submit']), textarea {
   padding: 8px;
   border-radius: 3px;
   cursor: text;
-
 
   &:focus {
     border: 1px solid green;
@@ -180,10 +182,10 @@ input[type='checkbox'] {
 }
 
 button, input[type='submit'] {
-  padding: 5px 15px;
+  padding: 5px 10px;
   font-size: 16px;
   background: #ccc;
-  margin: 10px;
+  margin: 5px;
   border-radius: 10px;
 
   &:hover {

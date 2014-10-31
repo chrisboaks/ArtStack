@@ -1,8 +1,76 @@
-<% @button_name = "Create Account" %>
+<% @button_name = "Sign Up" %>
 <% @action = users_url %>
 
-<h2>Create your account</h2>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ArtStack - art online</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
 
-<%= render "layouts/user_form" %>
+</head>
 
-<h3>Already have an account? <a href="<%= new_session_url %>">Log in</a></h3>
+<body class="landing-body">
+  <img class="landing" src="<%= asset_path 'backgrounds/bigbenblursized.jpg' %>"></img>
+
+
+  <%= flash[:errors] %>
+
+  <main>
+    <img class="logo" src="<%= asset_path 'logo-large.png' %>"></img>
+
+    <h1 class="title">
+      The world's favorite art
+    </h1>
+
+
+    <a id="facebook-signup" href="/auth/facebook">Click here to join ArtStack using Facebook</a>
+
+    <p class="friendly">
+      Using Facebook makes it easier to find friends
+    </p>
+
+    <h1 class="title">Enter your information below to join without using Facebook</h1>
+    <form action="<%= @action %>" method="post">
+
+      <%= render "layouts/auth_token" %>
+
+      <label for="email">Email</label>
+      <input
+      type="text"
+      name="user[email]"
+      value=""
+      id="email">
+
+      <label for="password">Password</label>
+      <input
+      type="password"
+      name="user[password]"
+      value=""
+      id="password">
+
+      <button><%= @button_name %></button>
+    </form>
+
+    <hr class="separator"></div>
+
+    <section class="friendly">
+      <p>We believe the best way to discover art is through people</p>
+
+      <ul>
+        <li>-  Discover and remember art</li>
+        <li>-  See more art by artists you like</li>
+        <li>-  Inspire friends</li>
+      </ul>
+    </section>
+
+    <h2>
+      Already have an account?  <a href="<%= new_session_url %>">Sign in</a>
+    </h2>
+
+
+
+  </main>
+</body>
+</html>
