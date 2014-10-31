@@ -50,7 +50,7 @@ h1, h2, h3, p, a, img, ul, li, form, label, caption, article, button {
   text-decoration: inherit;
   font-size: 100%;
   font: inherit;
-  font-family: sans-serif;
+  font-family: 'Gill Sans', Arial, sans-serif;
 }
 
 ul {
@@ -75,21 +75,7 @@ textarea, input {
   clear: both;
 }
 
-/* STYLES */
-
-div.devmode {                               //delete?
-  display: block;
-  width: 400px;
-  margin: 0 auto;
-  border: 1px solid red;
-  background: red;
-}
-
-div.welcome-user {
-  display: relative;
-  float: right;
-  margin: 0 10px;
-}
+/* BASIC STYLES */
 
 body {
   margin: 0 auto;
@@ -146,7 +132,32 @@ a {
   }
 }
 
+/* SPECIALTY STYLES */
 
+div {
+  .devmode {                               //delete?
+    display: block;
+    width: 400px;
+    margin: 0 auto;
+    border: 1px solid red;
+    background: red;
+  }
+
+  .welcome-user {
+    display: relative;
+    float: right;
+    margin: 0 10px;
+  }
+
+  .separator {
+    border-top: 1px solid #ccc;
+    height: 1px;
+    margin: 20px auto;
+    width: 420px;
+  }
+}
+
+/* INPUTS */
 
 input:not([type='submit']), textarea {
   border: 1px solid black;
@@ -174,5 +185,20 @@ button, input[type='submit'] {
 label.input {
   display: block;
   margin: 10px 0 0 0;
+}
+
+/* SPECIALTY INPUTS */
+
+button#facebook-auth {
+  width: 420px;
+  height: 55px;
+  color: white;
+  line-height: 55px;
+  margin: 10px 0;
+  text-decoration: none;
+  text-indent: 18px;
+  background-size: 800px;
+  background-image: image-url("long-facebook-button.png");
+
 }
 

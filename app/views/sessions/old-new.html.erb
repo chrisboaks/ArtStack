@@ -1,0 +1,12 @@
+<% @button_name = "Log In" %>
+<% @action = sessions_url %>
+
+<!-- <div id="bg">
+  <img src="<%= asset_path 'backgrounds/bigbenblursized.jpg' %>" alt="">
+</div> -->
+
+<h2>Login to ArtStack</h2>
+
+<%= render "layouts/user_form" %>
+
+<h3>Join free to discover and share art!  <a href="<%= new_user_url %>">Join now</a></h3>
