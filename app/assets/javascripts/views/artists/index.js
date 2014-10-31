@@ -1,6 +1,6 @@
-ArtStack.Views.ArtworksIndex = Backbone.View.extend({
+ArtStack.Views.ArtistsIndex = Backbone.View.extend({
 
-  template: JST['artworks/index'],
+  template: JST['artists/index'],
 
   initialize: function () {
     this.listenTo(this.collection, "add edit sync", this.render);
@@ -12,7 +12,8 @@ ArtStack.Views.ArtworksIndex = Backbone.View.extend({
   },
 
   render: function () {
-    var renderedContent = this.template({ artworks: this.collection });
+        console.log(this.collection)
+    var renderedContent = this.template({ artists: this.collection });
     this.$el.html(renderedContent);
     return this;
   },

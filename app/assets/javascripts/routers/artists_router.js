@@ -1,22 +1,22 @@
-ArtStack.Routers.ArtworksRouter = Backbone.Router.extend({
+ArtStack.Routers.ArtistsRouter = Backbone.Router.extend({
   initialize: function (options) {
     this.$rootEl = options.$rootEl;
   },
 
   routes: {
-    "artworks": "index",
-    "artworks/:id": "show"
+    "artists": "index",
+    "artists/:id": "show"
   },
 
   index: function () {
-    var artworks = ArtStack.artworks;
-    var indexView = new ArtStack.Views.ArtworksIndex( { collection: artworks } );
+    var artists = ArtStack.artists;
+    var indexView = new ArtStack.Views.ArtistsIndex( { collection: artists } );
     this._swapview(indexView);
   },
 
   show: function (id) {
-    var artwork = ArtStack.artworks.getOrFetch(id);
-    var showView = new ArtStack.Views.ArtworkShow( { model: artwork });
+    var artist = ArtStack.artists.getOrFetch(id);
+    var showView = new ArtStack.Views.ArtistShow( { model: artist });
     this._swapview(showView);
   },
 

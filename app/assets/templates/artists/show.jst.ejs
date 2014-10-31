@@ -1,0 +1,14 @@
+Backbone artist!
+<br>
+
+<%= artist.escape("name") %>
+
+<ul>
+<% if (artist.artworks) { %>
+  <% artist.artworks.each(function(artwork) { %>
+  <li>
+    <a href="<%= artwork.escape("image") %>"><%= artwork.escape("title") %></a>
+  </li>
+  <% }) %>
+<% } %>
+</ul>

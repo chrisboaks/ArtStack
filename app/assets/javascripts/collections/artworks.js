@@ -13,7 +13,7 @@ ArtStack.Collections.Artworks = Backbone.Collection.extend({
       artwork = new ArtStack.Models.Artwork({ id: id });
       artwork.fetch({
         success: function () {
-          artworks.add(post);
+          artworks.add(artwork);
         }
       });
     } else {
