@@ -1,0 +1,80 @@
+img, h1, p, a, label, ul {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+ul {
+  display: block;
+//  text-align: center;
+  margin: 0 auto;
+  width: 183px;
+  margin-bottom: 50px;
+
+}
+
+li {
+  display: block;
+  float: left;
+}
+
+button {
+  margin: 0 auto;
+  display: block;
+}
+
+
+input, button {
+  position: relative;
+  margin: 0 auto;
+  margin-bottom: 15px;
+}
+
+img.landing {
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  display: block;
+  top: -50px;
+  min-width: 1144px;
+}
+
+img.logo {
+  width: 320px;
+  height: 65px;
+}
+
+a#facebook-auth {
+  display: block;
+  width: 420px;
+  height: 54px;
+  color: white;
+  line-height: 55px;
+  font-size: 22px;
+  text-decoration: none;
+  text-indent: 38px;
+  background-size: 800px;
+  background-image: image-url("long-facebook-button.png");
+  font-weight: 100;
+}
+
+body {
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+h1.title {
+  font-size: 20px;
+}
+
+main {
+  width: 600px;
+  padding: 50px;
+  background: white;
+}
+
+.friendly {
+  font-size: 13px;
+  color: rgb(102,102,102);
+}
