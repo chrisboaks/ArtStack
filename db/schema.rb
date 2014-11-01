@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141030140546) do
+ActiveRecord::Schema.define(version: 20141101170355) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20141030140546) do
   add_index "artists", ["name"], name: "index_artists_on_name", unique: true, using: :btree
 
   create_table "artworks", force: true do |t|
-    t.string   "image",                           null: false
+    t.string   "image_url",                       null: false
     t.integer  "uploader_id"
     t.integer  "artist_id"
     t.string   "title",       default: "Unknown"
@@ -79,7 +79,6 @@ ActiveRecord::Schema.define(version: 20141030140546) do
     t.string   "uid"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-  add_index "users", ["session_token"], name: "index_users_on_session_token", unique: true, using: :btree
+  add_index "users", ["email", "session_token"], name: "index_users_on_email_and_session_token", using: :btree
 
 end
