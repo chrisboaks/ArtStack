@@ -3,5 +3,5 @@ json.artist do
 end
 
 json.artworks @artist.artworks do |artwork|
-  json.extract! artwork, :id, :title, :image, :art_type, :created_at
+  json.extract! artwork, :id, :title, :image_url, :art_type, :created_at
 end

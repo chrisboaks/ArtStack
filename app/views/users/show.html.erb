@@ -10,7 +10,7 @@
   <% @user.uploaded_works.each do |artwork| %>
   <li>
     <a href="<%= artist_url(artwork.artist) %>"><%= artwork.artist.name %></a>--
-    <a href="<%= artwork.image %>"><%= artwork.title %></a>
+    <a href="<%= artwork.image_url %>"><%= artwork.title %></a>
   </li>
   <% end %>
 </ul>
