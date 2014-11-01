@@ -30,8 +30,8 @@
 #
 
 Rails.application.routes.draw do
-  root to: "artworks#index"
-  # root to: "sessions#new"
+  # root to: "artworks#index"
+  root to: "sessions#new"
   get '/auth/facebook/callback', to: 'oauthcallbacks#facebook'
 
   resources :sessions, only: [:new, :create, :destroy]
