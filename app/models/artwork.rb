@@ -30,6 +30,8 @@ class Artwork < ActiveRecord::Base
   belongs_to :uploader, class_name: 'User', foreign_key: :uploader_id
   has_many :stacks
   has_many :stacking_users, through: :stacks, source: :user
+  has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" }
+  validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 
 
 end
