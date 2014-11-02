@@ -88,6 +88,7 @@
     width: 600px;
     padding: 50px;
     background: white;
+    position: relative;
   }
 
   .friendly {
@@ -95,10 +96,13 @@
     color: rgb(102,102,102);
   }
 
-	.error {
+	section.error {
 		display: block;
-		position: absolute;
+    position: absolute;
+    width: 600px;
+    font-size: 18px;
 		color: red;
-		margin: 0 auto;
+    text-align: center;
+		margin-top: -40px;
 	}
 }

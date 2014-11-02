@@ -43,6 +43,7 @@ Rails.application.routes.draw do
 
   resources :artworks, only: [:new, :create, :show, :index]
   resources :artists, only: [:show, :index]
+  resources :stacks, only: [:create, :delete]
 
   namespace :api, defaults: { format: :json } do
     resources :artworks, only: [:new, :create, :show, :index]

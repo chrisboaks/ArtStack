@@ -1,7 +1,17 @@
+<% require_login %>
+
 <a href="<%= artist_url(@artwork.artist) %>"><%= @artwork.artist.name %></a>
 <br>
 <a href="<%= @artwork.image %>"><%= @artwork.title %></a>
 <br>
 <br>
 <%= @artwork.art_type %><br>
-First stacker: <%= @artwork.uploader.email %>
+First stacker: <%= @artwork.uploader.username ? @artwork.uploader.username : 'anonymous' %>
+
+<form action="<%= stacks_url %>" method="post">
+  <input type="hidden" name="_method" value="post">
+  <input type="hidden" name="user[id]" value="<%= current_user.id %>">
+  <input type="hidden" name="artwork[id]" value="<%= @artwork.id %>">
+
+  <button class="stacker">Stack it</button>
+</form>
