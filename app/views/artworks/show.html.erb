@@ -6,11 +6,11 @@
 <br>
 <br>
 <%= @artwork.art_type %><br>
-First stacker: <%= @artwork.uploader.respond_to?('username') ? @artwork.uploader.username : 'anonymous' %>
+Uploader: <%= @artwork.uploader.respond_to?('username') ? @artwork.uploader.username : 'Anonymous' %>
 
 <% @stack = current_user.stacks.find_by(artwork_id: @artwork.id) %>
 <% if @stack %>
-<%= render "unstack_button" %>
+  <%= render "unstack_button" %>
 <% else %>
-<%= render "stack_button" %>
+  <%= render "stack_button" %>
 <% end %>

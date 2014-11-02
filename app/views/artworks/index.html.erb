@@ -1,10 +1,18 @@
 <h1>All the Art!</h1>
+<% @stacks = current_user.stacks %>
 
 <ul>
 <% @artworks.each do |artwork| %>
 <li>
+  <% @artwork = artwork %>
   <a href="<%= artist_url(artwork.artist) %>"><%= artwork.artist.name %></a> --
   <a href="<%= artwork.image %>"><%= artwork.title %></a>
+  <% @stack = current_user.stacks.find_by(artwork_id: @artwork.id) %>
+  <% if @stack %>
+    <%= render "unstack_button" %>
+  <% else %>
+    <%= render "stack_button" %>
+  <% end %>
 </li>
 <% end %>
 
