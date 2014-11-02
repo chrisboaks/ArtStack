@@ -11,7 +11,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141101212839) do
+
+ActiveRecord::Schema.define(version: 20141101221912) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,13 +26,16 @@ ActiveRecord::Schema.define(version: 20141101212839) do
   add_index "artists", ["name"], name: "index_artists_on_name", unique: true, using: :btree
 
   create_table "artworks", force: true do |t|
-    t.string   "image_url",                       null: false
     t.integer  "uploader_id"
     t.integer  "artist_id"
-    t.string   "title",       default: "Unknown"
-    t.string   "art_type",                        null: false
+    t.string   "title",              default: "Unknown"
+    t.string   "art_type",                               null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   add_index "artworks", ["art_type"], name: "index_artworks_on_art_type", using: :btree
@@ -80,6 +84,6 @@ ActiveRecord::Schema.define(version: 20141101212839) do
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-  add_index "users", ["password_digest"], name: "index_users_on_password_digest", unique: true, using: :btree
+  add_index "users", ["session_token"], name: "index_users_on_session_token", unique: true, using: :btree
 
 end

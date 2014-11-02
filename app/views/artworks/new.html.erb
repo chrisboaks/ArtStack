@@ -2,12 +2,12 @@
 
 <h1>Upload New Art</h1>
 
-<form action="<%= artworks_url %>" method="post">
+<form action="<%= artworks_url %>" enctype="multipart/form-data" method="post">
 
   <%= render "layouts/auth_token" %>
 
-  <label for="image_url" class="input">Image URL</label>
-  <input type="text" name="artwork[image_url]" value="" id="image_url" class="input">
+  <label for="artwork-image" class="input">Image URL</label>
+  <input type="file" name="artwork[image]" value="" id="artwork-image" class="input">
 
   <label for="artist" class="input">Artist</label>
   <input type="text" name="artist_name" value="" id="artist" class="input">
