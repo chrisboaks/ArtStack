@@ -6,12 +6,11 @@
 <br>
 <br>
 <%= @artwork.art_type %><br>
-First stacker: <%= @artwork.uploader.username ? @artwork.uploader.username : 'anonymous' %>
+First stacker: <%= @artwork.uploader.respond_to?('username') ? @artwork.uploader.username : 'anonymous' %>
 
-<form action="<%= stacks_url %>" method="post">
-  <input type="hidden" name="_method" value="post">
-  <input type="hidden" name="user[id]" value="<%= current_user.id %>">
-  <input type="hidden" name="artwork[id]" value="<%= @artwork.id %>">
-
-  <button class="stacker">Stack it</button>
-</form>
+<% @stack = current_user.stacks.find_by(artwork_id: @artwork.id) %>
+<% if @stack %>
+<%= render "unstack_button" %>
+<% else %>
+<%= render "stack_button" %>
+<% end %>
