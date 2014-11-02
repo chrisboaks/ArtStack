@@ -15,10 +15,10 @@
 <body class="landing-body">
   <img class="landing" src="<%= asset_path 'backgrounds/bigbenblursized.jpg' %>"></img>
 
-
-  <%= flash[:errors] %>
-
   <main>
+
+		<section class="error"><%= flash[:errors] %></section>
+
     <img class="logo" src="<%= asset_path 'logo-large.png' %>"></img>
 
     <h1 class="title">

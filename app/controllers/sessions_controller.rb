@@ -9,8 +9,8 @@ class SessionsController < ApplicationController
       login(user)
       redirect_to user_url(user)
     else
-      render :new
       flash.now[:errors] = "There was a problem with that email/password combination.  Please try again."
+      render :new, :layout => false
     end
   end
 

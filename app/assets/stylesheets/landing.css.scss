@@ -94,4 +94,11 @@
     font-size: 13px;
     color: rgb(102,102,102);
   }
+
+	.error {
+		display: block;
+		position: absolute;
+		color: red;
+		margin: 0 auto;
+	}
 }
