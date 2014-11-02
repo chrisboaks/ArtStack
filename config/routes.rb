@@ -1,7 +1,7 @@
 # == Route Map
 #
 #                  Prefix Verb   URI Pattern                                  Controller#Action
-#                    root GET    /                                            artworks#index
+#                    root GET    /                                            sessions#new
 #  auth_facebook_callback GET    /auth/facebook/callback(.:format)            oauthcallbacks#facebook
 #                sessions POST   /sessions(.:format)                          sessions#create
 #             new_session GET    /sessions/new(.:format)                      sessions#new
