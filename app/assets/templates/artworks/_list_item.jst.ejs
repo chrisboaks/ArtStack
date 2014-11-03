@@ -1,4 +1,5 @@
-<%= artwork.artist.escape('name') %>
+<% if (artwork.artist) { artwork.artist.escape('name') } %>
+<% debugger %>
 <%= artwork.escape('title') %>
-<%= artwork.image %>
-Stacked: <%= artwork.stacked %>
+<%= artwork.escape('image') %>
+Stacked: <%= artwork.get('stacked') %>
