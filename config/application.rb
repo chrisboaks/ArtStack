@@ -19,16 +19,6 @@ module ArtStack
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
-    config.paperclip_defaults = {
-      :storage => :s3,
-      :s3_protocol => 'http',
-      :s3_host_name => 's3.amazonaws.com',
-      :path => "images/:class/:id.:style.:extension",
-      :s3_credentials => {
-        :bucket => ENV['S3_BUCKET_NAME'],
-        :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
-        :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
-      }
-    }
+
   end
 end
