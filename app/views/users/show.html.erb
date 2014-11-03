@@ -2,10 +2,9 @@
 
 <h1><%= user_moniker(@user) %> is just the best user ever!</h1>
 
-
 <% if @user.uploaded_works.size > 0 %>
 <br>
-<%= @user.email %>'s uploaded artworks:
+<h2><%= @user.email %>'s uploaded artworks:</h2>
 <ul>
   <% @user.uploaded_works.each do |artwork| %>
   <li>
@@ -13,6 +12,19 @@
     <a href="<%= artwork.image %>"><%= artwork.title %></a>
   </li>
   <% end %>
+</ul>
+<% end %>
+
+<% if @user_profile %>
+<br>
+<h2>Profile Details</h2>
+<ul class="profile">
+  <li>Username: <%= @user_profile.username || "None" %></li>
+  <li><%= "First Name: " + @user_profile.first_name if @user_profile.first_name %></li>
+  <li><%= "Location: " + @user_profile.location if @user_profile.location %></li>
+  <li><%= "Bio: " + @user_profile.bio if @user_profile.bio %></li>
+  <li><%= "This user is a: " + @user_profile.description.join(', ') %></li>
+  <li><%= "Website: " + @user_profile.website if @user_profile.website %></li>
 </ul>
 <% end %>
 

@@ -28,4 +28,16 @@ class UserProfile < ActiveRecord::Base
 
   belongs_to :user
 
+  def description
+    traits = []
+    traits << "Artist" if self.is_artist
+    traits << "Art Professional" if self.is_art_professional
+    traits << "Collector" if self.is_collector
+    traits << "Art Lover" if self.is_art_lover
+    traits << "Curator" if self.is_curator
+    traits << "Art Writer" if self.is_art_writer
+    traits << "Student" if self.is_student
+    traits
+  end
+
 end

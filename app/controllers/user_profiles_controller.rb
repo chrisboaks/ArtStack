@@ -30,11 +30,11 @@ class UserProfilesController < ApplicationController
       render :edit
     end
   end
-
-  def show
-    @user_profile = UserProfile.find_by(user: current_user)
-    render :show
-  end
+  #
+  # def show
+  #   @user_profile = UserProfile.find_by(user: current_user)
+  #   render :show
+  # end
 
   private
   def user_profile_params
