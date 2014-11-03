@@ -20,7 +20,6 @@ This site is a clone of theartstack.com, and it functions as a Pinterest-type si
 - Follows
 - Comments
 
-
 - I am happy with the progress you all are making. Still I want to
 keep reminding you to pick the features you implement according to
 priority. It's easy to fall into the trap of spending large amounts of
