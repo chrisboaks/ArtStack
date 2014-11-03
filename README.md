@@ -15,8 +15,11 @@ This site is a clone of theartstack.com, and it functions as a Pinterest-type si
 #Todos:
 
 - Stacks
+- Clarify Sign In / Sign Up distinction
+- Direct new user to profile page until entries are made
 - Follows
 - Comments
+
 
 - I am happy with the progress you all are making. Still I want to
 keep reminding you to pick the features you implement according to
