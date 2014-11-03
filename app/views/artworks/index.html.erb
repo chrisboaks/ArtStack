@@ -1,5 +1,5 @@
 <h1>All the Art!</h1>
-<% @stacks = current_user.stacks %>
+<% @stacks = current_user.stacks if logged_in? %>
 
 <ul>
 <% @artworks.each do |artwork| %>
@@ -8,15 +8,14 @@
   <a href="<%= artist_url(artwork.artist) %>"><%= artwork.artist.name %></a> --
   <a href="<%= artwork.image %>"><%= artwork.title %></a>
 
+<% if logged_in? %>
   <% @stack = current_user.stacks.find_by(artwork_id: @artwork.id) %>
   <% if @stack %>
     <%= render "unstack_button" %>
   <% else %>
     <%= render "stack_button" %>
   <% end %>
-
+<% end %>
 </li>
 <% end %>
-
-
 </ul>
