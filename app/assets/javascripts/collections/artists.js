@@ -1,4 +1,5 @@
 ArtStack.Collections.Artists = Backbone.Collection.extend({
+
   url: '/api/artists',
 
   model: ArtStack.Models.Artist,

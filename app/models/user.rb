@@ -36,12 +36,11 @@ class User < ActiveRecord::Base
   def self.find_or_create_by(options)
     user = User.find_by(options)
 
-    if user
-      return user
-    else
+    unless user
       options[:password] = SecureRandom.urlsafe_base64
       user = User.create(options)
     end
+
     user
   end
 

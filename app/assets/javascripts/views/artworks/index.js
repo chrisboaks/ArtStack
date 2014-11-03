@@ -3,7 +3,8 @@ ArtStack.Views.ArtworksIndex = Backbone.View.extend({
   template: JST['artworks/index'],
 
   initialize: function () {
-    this.listenTo(this.collection, "add edit sync", this.render);
+    this.listenTo(this.collection, "sync", this.render);
+    this.subviews = [];
   },
 
   events: {
@@ -14,6 +15,13 @@ ArtStack.Views.ArtworksIndex = Backbone.View.extend({
   render: function () {
     var renderedContent = this.template({ artworks: this.collection });
     this.$el.html(renderedContent);
+    var that = this;
+
+    this.collection.each(function (artwork) {
+      var view = new ArtStack.Views.ArtworkListItem({ model: artwork });
+      that.subviews.push(view);
+      that.$el.find("#artworks-index").append(view.render().$el);
+    });
     return this;
   },
 

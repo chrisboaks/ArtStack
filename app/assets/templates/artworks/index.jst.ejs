@@ -1,8 +1,2 @@
-<ul>
-<% artworks.each(function(artwork) { %>
-  <li>
-     <a href="/#artists/<%= artwork.artist.get('id') %>"><%= artwork.artist.escape('name') %></a>--
-     <a href="<%= artwork.escape('image') %>"><%= artwork.escape('title') %></a>
-  </li>
-<% }) %>
-</ul>
+<h1>Backbone artworks!</h1>
+<ul id="artworks-index"></ul>
