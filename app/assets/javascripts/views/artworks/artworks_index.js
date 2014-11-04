@@ -25,6 +25,13 @@ ArtStack.Views.ArtworksIndex = Backbone.View.extend({
     return this;
   },
 
+  remove: function () {
+    this.subviews.each(function (sub) {
+      sub.remove();
+    });
+    Backbone.View.prototype.remove.call(this);
+  },
+
   toggleStack: function (event) {
     //TODO
   },
