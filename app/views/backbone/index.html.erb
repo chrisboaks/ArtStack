@@ -4,7 +4,9 @@
 <script>
 $(document).ready(function(){
   ArtStack.initialize();
-
-
+  window.currentUserId = <%= current_user.id %>
+  if (this.model) {
+    this.model.getOrFetch();
+  }
 });
 </script>

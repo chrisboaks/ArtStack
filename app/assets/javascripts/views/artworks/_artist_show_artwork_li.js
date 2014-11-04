@@ -1,6 +1,6 @@
-ArtStack.Views.ArtworkListItem = Backbone.View.extend({
+ArtStack.Views.ArtistShowArtworkLI = Backbone.View.extend({
 
-  template: JST['artworks/_artwork_list_item'],
+  template: JST['artworks/_artist_show_artwork_li'],
 
   tagName: 'li',
 
@@ -14,4 +14,4 @@ ArtStack.Views.ArtworkListItem = Backbone.View.extend({
     return this;
   },
 
-})
+});
