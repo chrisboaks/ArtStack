@@ -6,7 +6,7 @@ window.ArtStack = {
   initialize: function() {
 
     new ArtStack.Routers.Router({
-      $rootEl: $("main")
+      $rootEl: $("#backbone-content")
     });
     ArtStack.artworks = new ArtStack.Collections.Artworks();
     ArtStack.artworks.fetch();
@@ -20,6 +20,4 @@ window.ArtStack = {
   }
 };
 
-$(document).ready(function(){
-  ArtStack.initialize();
-});
+
