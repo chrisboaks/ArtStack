@@ -113,7 +113,7 @@ header {
 }
 
 main {
-  width: 775px;
+  width: 900px;
   margin: 25px auto;
 }
 
@@ -219,4 +219,29 @@ button, input[type='submit'] {
 label.input {
   display: block;
   margin: 10px 0 0 0;
+}
+
+/* IMAGES */
+
+img {
+  width: 100%;
+}
+
+div.img-container-sm {
+  display: inline-block;
+  float: left;
+  max-width: 150px;
+  padding: 20px;
+}
+
+div.img-container-med {
+  display: inline-block;
+  float: left;
+  max-width: 300px;
+  padding: 20px;
+}
+
+div.img-container-lrg {
+  max-width: 600px;
+  padding: 20px;
 }
