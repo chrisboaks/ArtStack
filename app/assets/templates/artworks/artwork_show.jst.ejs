@@ -1,4 +1,6 @@
 <h1>Backbone Artworks!</h1>
 <a href="<%= artwork.escape("image") %>"><%= artwork.escape("title") %></a>
-<a href="#artists/<%= artist.get('id') %>"><%= artwork.artist.escape("name") %></a>
 
+<% if (artwork.artist) { %>
+  <a href="/backbone/#artists/<%= artwork.artist.id %>"><%= artwork.artist.escape("name") %></a>
+<% } %>

@@ -48,14 +48,16 @@ Rails.application.routes.draw do
 
   resources :backbone, only: :index
 
-  resources :artworks, only: [:new, :create, :show, :index]
-  resources :artists, only: [:show, :index]
+  # resources :artworks, only: [:new, :create, :show, :index]
+  # resources :artists, only: [:show, :index]
   resources :stacks, only: [:create, :destroy]
 
+  resources :artworks, only: [:new, :create]
+
   namespace :api, defaults: { format: :json } do
-    resources :artworks, only: [:new, :create, :show, :index]
+    resources :artworks, only: [:show, :index]
     resources :artists, only: [:show, :index]
-    resources :stacks, only: [:create, :destroy]
+    #resources :stacks, only: [:create, :destroy]
     resources :users, only: :show
   end
 

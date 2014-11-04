@@ -8,7 +8,7 @@ ArtStack.Views.ArtistsIndex = Backbone.View.extend({
   },
 
   events: {
-    "click button": "toggleStack"
+
     //TODO
   },
 
@@ -19,7 +19,7 @@ ArtStack.Views.ArtistsIndex = Backbone.View.extend({
 
     this.collection.each(function (artist) {
       artist.artworks.each(function (artwork) {
-        var view = new ArtStack.Views.ArtworkListItem({model: artwork});
+        var view = new ArtStack.Views.ArtistShowArtworkLI({model: artwork});
         that.subviews.push(view);
         that.$el.find("#" + artist.id).append(view.render().$el);
       });
@@ -33,7 +33,7 @@ ArtStack.Views.ArtistsIndex = Backbone.View.extend({
   },
 
   remove: function () {
-    this.subviews.each(function (sub) {
+    this.subviews.forEach(function (sub) {
       sub.remove();
     });
     Backbone.View.prototype.remove.call(this);

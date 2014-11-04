@@ -13,7 +13,7 @@ class ArtworksController < ApplicationController
     @artwork.uploader_id = current_user.id
 
     if @artwork.save
-      redirect_to artwork_url(@artwork)
+      redirect_to "/backbone/#"
     else
       flash[:errors] = @artwork.errors.full_messages
       render :new

@@ -14,15 +14,13 @@
   <%= render "layouts/devmode_info" %>
   <% end %>
 
-  <%= render "layouts/header" %>
+  <%= render "layouts/header_backbone" %>
 
   <%= flash[:errors] %>
 
   <main>
     <%= yield %>
   </main>
-
-  <%= render "layouts/footer" %>
 
 </body>
 </html>
