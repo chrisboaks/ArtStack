@@ -2,25 +2,33 @@ ArtStack.Views.UserShow = Backbone.View.extend({
 
   template: JST['users/show'],
 
-  events: {
-    "click button": "toggleStack"
-    //TODO
+  initialize: function () {
+    this.listenTo(this.model, "sync", this.render);
+    this.subviews = [];
   },
-
-  // render: function () {
-  //   var renderedContent = this.template({ user: this.model });
-  //   this.$el.html(renderedContent);
   //
-  //   if (this.model.user_artworks) { function () {
-  //     console.log(this.model.user_artworks)
-  //   }};
-  //
-  //
-  //   return this;
+  // events: {
+  //   "click button": "toggleStack"
+  //   //TODO
   // },
+  //
+  render: function () {
+    var renderedContent = this.template({ user: this.model });
+    this.$el.html(renderedContent);
+    that = this;
 
-  toggleStack: function (event) {
-    //TODO
+    if (this.model.user_artworks) {
+      this.model.user_artworks.each(function (artwork) {
+        var view = new ArtStack.Views.ArtworkListItem({ model: artwork });
+        that.subviews.push(view);
+        that.$el.find("#artworks-index").append(view.render().$el);
+      });
+    }
+    return this;
   },
+  //
+  // toggleStack: function (event) {
+  //   //TODO
+  // },
 
 });

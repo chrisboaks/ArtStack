@@ -14,7 +14,7 @@ window.ArtStack = {
     ArtStack.artists = new ArtStack.Collections.Artists();
     ArtStack.artists.fetch();
 
-    ArtStack.users = new ArtStack.Collections.Users();
+    // ArtStack.users = new ArtStack.Collections.Users();
 
     Backbone.history.start();
   }
