@@ -8,6 +8,7 @@ window.ArtStack = {
     new ArtStack.Routers.Router({
       $rootEl: $("#backbone-content")
     });
+    
     ArtStack.artworks = new ArtStack.Collections.Artworks();
     ArtStack.artworks.fetch();
 
@@ -19,5 +20,3 @@ window.ArtStack = {
     Backbone.history.start();
   }
 };
-
-

@@ -1,7 +1,7 @@
 # == Route Map
 #
 #                  Prefix Verb   URI Pattern                                  Controller#Action
-#                    root GET    /                                            sessions#new
+#                    root GET    /                                            artists#index
 #  auth_facebook_callback GET    /auth/facebook/callback(.:format)            oauthcallbacks#facebook
 #                sessions POST   /sessions(.:format)                          sessions#create
 #             new_session GET    /sessions/new(.:format)                      sessions#new
@@ -13,12 +13,15 @@
 #                   users POST   /users(.:format)                             users#create
 #                new_user GET    /users/new(.:format)                         users#new
 #                    user GET    /users/:id(.:format)                         users#show
+#          backbone_index GET    /backbone(.:format)                          backbone#index
 #                artworks GET    /artworks(.:format)                          artworks#index
 #                         POST   /artworks(.:format)                          artworks#create
 #             new_artwork GET    /artworks/new(.:format)                      artworks#new
 #                 artwork GET    /artworks/:id(.:format)                      artworks#show
 #                 artists GET    /artists(.:format)                           artists#index
 #                  artist GET    /artists/:id(.:format)                       artists#show
+#                  stacks POST   /stacks(.:format)                            stacks#create
+#                   stack DELETE /stacks/:id(.:format)                        stacks#destroy
 #            api_artworks GET    /api/artworks(.:format)                      api/artworks#index {:format=>:json}
 #                         POST   /api/artworks(.:format)                      api/artworks#create {:format=>:json}
 #         new_api_artwork GET    /api/artworks/new(.:format)                  api/artworks#new {:format=>:json}
@@ -27,6 +30,7 @@
 #              api_artist GET    /api/artists/:id(.:format)                   api/artists#show {:format=>:json}
 #              api_stacks POST   /api/stacks(.:format)                        api/stacks#create {:format=>:json}
 #               api_stack DELETE /api/stacks/:id(.:format)                    api/stacks#destroy {:format=>:json}
+#                api_user GET    /api/users/:id(.:format)                     api/users#show {:format=>:json}
 #
 
 Rails.application.routes.draw do
