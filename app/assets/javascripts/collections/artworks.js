@@ -7,7 +7,6 @@ ArtStack.Collections.Artworks = Backbone.Collection.extend({
   getOrFetch: function (id) {
     var artwork = this.get(id);
     var artworks = this;
-    console.log(artworks);
 
     if (!artwork) {
       artwork = new ArtStack.Models.Artwork({ id: id });
