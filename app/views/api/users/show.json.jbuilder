@@ -1,4 +1,8 @@
+current_user_stacked_work_ids = (current_user ? current_user.stacks.map(&:artwork_id) : [])
+
 json.extract! @user, :email, :id
+
+json.moniker User.moniker(@user)
 
 if @user.user_profile
 json.user_profile do
@@ -21,8 +25,9 @@ end
 user_artworks = (@user.uploaded_works + @user.stacked_works).uniq
 
 json.user_artworks do
-  json.array! user_artworks do |work|
-    json.extract! work,
+  json.array! user_artworks do |artwork|
+    json.stacked current_user_stacked_work_ids.include?(artwork.id)
+    json.extract! artwork,
       :id,
       :artist_id,
       :title,
@@ -38,3 +43,4 @@ json.user_artists do
     json.extract! artist, :id, :name
   end
 end
+

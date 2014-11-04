@@ -1,6 +1,6 @@
 ArtStack.Views.ArtistsIndex = Backbone.View.extend({
 
-  template: JST['artists/index'],
+  template: JST['artists/artists_index'],
 
   initialize: function () {
     this.listenTo(this.collection, "sync", this.render);
