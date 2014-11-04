@@ -1,6 +1,67 @@
-<% @button_name = "Sign In" %>
-<% @action = sessions_url %>
-<% @action_text = "Enter your information below to sign in without Facebook" %>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ArtStack - art online</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
 
-<% require_logout %>
-<%= render "layouts/user_form" %>
+<body class="landing-body">
+  <% require_logout %>
+  <img class="landing" src="<%= asset_path 'backgrounds/bigbenblursized.jpg' %>"></img>
+
+  <main>
+
+    <section class="error"><%= flash[:errors] %></section>
+
+    <img class="logo" src="<%= asset_path 'logo-large.png' %>"></img>
+
+    <h1 class="title">
+      The world's favorite art
+    </h1>
+
+
+    <a id="facebook-signin" href="/auth/facebook">Sign in to ArtStack using Facebook</a>
+
+    <p class="friendly">
+      Using Facebook makes it easier to find friends
+    </p>
+
+    <h1 class="title">Enter your information below to sign in without Facebook</h1>
+    <form action="sessions_url" method="post">
+
+      <%= render "layouts/auth_token" %>
+
+      <label for="email">Email</label>
+      <input
+      type="text"
+      name="user[email]"
+      value=""
+      id="email">
+
+      <label for="password">Password</label>
+      <input
+      type="password"
+      name="user[password]"
+      value=""
+      id="password">
+
+      <button>Sign In</button>
+    </form>
+
+    <hr class="separator"></div>
+
+    <section class="friendly">
+      <p>We believe the best way to discover art is through people</p>
+
+      <ul>
+        <li>-  Discover and remember art</li>
+        <li>-  See more art by artists you like</li>
+        <li>-  Inspire friends</li>
+      </ul>
+    </section>
+
+  </main>
+</body>
+</html>

@@ -1,16 +1,25 @@
 class UsersController < ApplicationController
 
-  def create
-    @user = User.new(user_params)
+  # def new
+  #   render :new, :layout => false
+  # end
 
-    if @user.save
-      login(@user)
-      redirect_to user_url(@user)
-    else
-      flash.now[:errors] = @user.errors.full_messages
-      render :new, :layout => false
+  # def create
+  #   @user = User.new(user_params)
+  #
+  #   if @user.save
+  #     login(@user)
+  #     redirect_to user_url(@user)
+  #   else
+  #     render :new, :layout => false
+  #     flash.now[:errors] = @user.errors.full_messages
+  #   end
+  # end
 
-    end
+  def show
+    @user = User.find(params[:id])
+    @user_profile = UserProfile.find_by(user: @user) || nil
+    render :show
   end
 
   private
