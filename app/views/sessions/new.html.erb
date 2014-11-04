@@ -2,8 +2,5 @@
 <% @action = sessions_url %>
 <% @action_text = "Enter your information below to sign in without Facebook" %>
 
-<% @swap_text = "Need an account?  " %>
-<% @swap_button = "Sign Up" %>
-<% @swap_link = new_user_url %>
-
+<% require_logout %>
 <%= render "layouts/user_form" %>

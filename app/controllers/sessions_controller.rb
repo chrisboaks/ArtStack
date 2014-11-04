@@ -4,12 +4,27 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.find_by_credentials(params[:user][:email], params[:user][:password])
-    if user
-      login(user)
+    email = params[:user][:email]
+    password = params[:user][:password]
+
+    @user = User.find_by(email: email)
+
+    if @user && @user.is_password?(password)
+      login(@user)
+      redirect_to backbone_index_url
+    elsif @user && @user.provider
+      redirect_to "/auth/facebook"
+    elsif @user
+      flash.now[:errors] = "Incorrect password.  Please try again."
+      render :new, :layout => false
+    elsif User.new(email: email, password: password).save
+      login(User.find_by(email: email))
+      flash[:notice] = "New user successfully created!"
       redirect_to backbone_index_url
     else
-      flash.now[:errors] = "There was a problem with that email/password combination.  Please try again."
+      user = User.new(email: email, password: password)
+      user.valid?
+      flash.now[:errors] = user.errors.full_messages.join(', ')
       render :new, :layout => false
     end
   end

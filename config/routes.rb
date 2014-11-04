@@ -1,55 +1,44 @@
 # == Route Map
 #
-#                  Prefix Verb   URI Pattern                                  Controller#Action
-#                    root GET    /                                            artists#index
-#  auth_facebook_callback GET    /auth/facebook/callback(.:format)            oauthcallbacks#facebook
-#                sessions POST   /sessions(.:format)                          sessions#create
-#             new_session GET    /sessions/new(.:format)                      sessions#new
-#                 session DELETE /sessions/:id(.:format)                      sessions#destroy
-# edit_user_user_profiles GET    /users/:user_id/user_profiles/edit(.:format) user_profiles#edit
-#      user_user_profiles GET    /users/:user_id/user_profiles(.:format)      user_profiles#show
-#                         PATCH  /users/:user_id/user_profiles(.:format)      user_profiles#update
-#                         PUT    /users/:user_id/user_profiles(.:format)      user_profiles#update
-#                   users POST   /users(.:format)                             users#create
-#                new_user GET    /users/new(.:format)                         users#new
-#                    user GET    /users/:id(.:format)                         users#show
-#          backbone_index GET    /backbone(.:format)                          backbone#index
-#                artworks GET    /artworks(.:format)                          artworks#index
-#                         POST   /artworks(.:format)                          artworks#create
-#             new_artwork GET    /artworks/new(.:format)                      artworks#new
-#                 artwork GET    /artworks/:id(.:format)                      artworks#show
-#                 artists GET    /artists(.:format)                           artists#index
-#                  artist GET    /artists/:id(.:format)                       artists#show
-#                  stacks POST   /stacks(.:format)                            stacks#create
-#                   stack DELETE /stacks/:id(.:format)                        stacks#destroy
-#            api_artworks GET    /api/artworks(.:format)                      api/artworks#index {:format=>:json}
-#                         POST   /api/artworks(.:format)                      api/artworks#create {:format=>:json}
-#         new_api_artwork GET    /api/artworks/new(.:format)                  api/artworks#new {:format=>:json}
-#             api_artwork GET    /api/artworks/:id(.:format)                  api/artworks#show {:format=>:json}
-#             api_artists GET    /api/artists(.:format)                       api/artists#index {:format=>:json}
-#              api_artist GET    /api/artists/:id(.:format)                   api/artists#show {:format=>:json}
-#              api_stacks POST   /api/stacks(.:format)                        api/stacks#create {:format=>:json}
-#               api_stack DELETE /api/stacks/:id(.:format)                    api/stacks#destroy {:format=>:json}
-#                api_user GET    /api/users/:id(.:format)                     api/users#show {:format=>:json}
+#                 Prefix Verb   URI Pattern                       Controller#Action
+#                   root GET    /                                 backbone#index
+# auth_facebook_callback GET    /auth/facebook/callback(.:format) oauthcallbacks#facebook
+#               sessions POST   /sessions(.:format)               sessions#create
+#            new_session GET    /sessions/new(.:format)           sessions#new
+#                session DELETE /sessions/:id(.:format)           sessions#destroy
+#     edit_user_profiles GET    /user_profiles/edit(.:format)     user_profiles#edit
+#          user_profiles GET    /user_profiles(.:format)          user_profiles#show
+#                        PATCH  /user_profiles(.:format)          user_profiles#update
+#                        PUT    /user_profiles(.:format)          user_profiles#update
+#         backbone_index GET    /backbone(.:format)               backbone#index
+#                 stacks POST   /stacks(.:format)                 stacks#create
+#                  stack DELETE /stacks/:id(.:format)             stacks#destroy
+#               artworks POST   /artworks(.:format)               artworks#create
+#            new_artwork GET    /artworks/new(.:format)           artworks#new
+#           api_artworks GET    /api/artworks(.:format)           api/artworks#index {:format=>:json}
+#            api_artwork GET    /api/artworks/:id(.:format)       api/artworks#show {:format=>:json}
+#            api_artists GET    /api/artists(.:format)            api/artists#index {:format=>:json}
+#             api_artist GET    /api/artists/:id(.:format)        api/artists#show {:format=>:json}
+#               api_user GET    /api/users/:id(.:format)          api/users#show {:format=>:json}
 #
 
 Rails.application.routes.draw do
 
   # root to: "sessions#new"
-  root to: "artists#index"
+  # root to: "artists#index"
+  # resources :artworks, only: [:new, :create, :show, :index]
+  # resources :artists, only: [:show, :index]
+
+  root to: "backbone#index"
 
   get '/auth/facebook/callback', to: 'oauthcallbacks#facebook'
 
   resources :sessions, only: [:new, :create, :destroy]
 
-  resources :users, only: [:new, :create, :show] do
-    resource :user_profiles, only: [:edit, :update, :show]
-  end
+  resource :user_profiles, only: [:edit, :update, :show]
 
   resources :backbone, only: :index
 
-  # resources :artworks, only: [:new, :create, :show, :index]
-  # resources :artists, only: [:show, :index]
   resources :stacks, only: [:create, :destroy]
 
   resources :artworks, only: [:new, :create]
@@ -57,7 +46,6 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     resources :artworks, only: [:show, :index]
     resources :artists, only: [:show, :index]
-    #resources :stacks, only: [:create, :destroy]
     resources :users, only: :show
   end
 

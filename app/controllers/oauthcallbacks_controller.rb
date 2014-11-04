@@ -7,7 +7,7 @@ class OauthcallbacksController < ApplicationController
       email:    request.env['omniauth.auth']['extra']['raw_info']['email']
     })
     login(@user)
-    redirect_to user_url(@user)
+    redirect_to backbone_index_url
   end
 
 end
