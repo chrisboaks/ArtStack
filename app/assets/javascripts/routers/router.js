@@ -5,9 +5,9 @@ ArtStack.Routers.Router = Backbone.Router.extend({
   },
 
   routes: {
-    "": "artistsIndex",
+    "": "artworksIndex",
     "artists/:id": "artistShow",
-    "artworks": "artworksIndex",
+    "artists": "artistsIndex",
     "artworks/:id": "artworkShow",
     "users/:id": "userShow"
   },

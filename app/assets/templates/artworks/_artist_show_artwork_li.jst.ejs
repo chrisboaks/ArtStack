@@ -1,3 +1,17 @@
-<a href="/backbone/#artworks/<%= artwork.id %>"><%= artwork.escape('title') %></a>
-<%= artwork.escape('image') %>
+<div class="artwork-wrapper">
+<div class="img-container-med">
+
+<a href="/backbone/#artworks/<%= artwork.id %>">
+<img src="<%= artwork.escape('image') %>">
+</a>
+
+<a href="/backbone/#artworks/<%= artwork.id %>">
+<%= artwork.escape('title') %>
+</a>
+
+<p>
 Stacked: <%= artwork.get('stacked') %>
+</p>
+
+</div>
+</div>
