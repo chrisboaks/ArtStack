@@ -16,7 +16,8 @@
 
   <%= render "layouts/header_backbone" %>
 
-  <%= flash[:errors] %>
+  <div id="flash-errors"><%= flash[:errors] %></div>
+  <div id="flash-notice"><%= flash[:notice] %></div>
 
   <main>
     <%= yield %>

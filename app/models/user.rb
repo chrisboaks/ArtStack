@@ -14,7 +14,7 @@
 
 class User < ActiveRecord::Base
 
-  # validates_presence_and_uniqueness_of :email
+  validates :email, presence: true, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
 
   after_initialize :ensure_session_token

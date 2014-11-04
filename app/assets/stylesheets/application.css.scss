@@ -144,6 +144,22 @@ a {
 
 /* SPECIALTY STYLES */
 
+#flash-errors {
+  display: inline-block;
+  width: 400px;
+  margin: auto;
+  color: red;
+  font-weight: bold;
+}
+
+#flash-notice {
+  display: inline-block;
+  width: 400px;
+  margin: auto;
+  color: green;
+  font-weight: bold;
+}
+
 div {
   .devmode {                               //delete?
     display: block;
@@ -152,6 +168,8 @@ div {
     border: 1px solid red;
     background: red;
   }
+
+
 }
 
 #welcome-user {
@@ -202,6 +220,3 @@ label.input {
   display: block;
   margin: 10px 0 0 0;
 }
-
-
-

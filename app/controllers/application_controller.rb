@@ -32,12 +32,14 @@ class ApplicationController < ActionController::Base
   end
 
   def require_logout
-    redirect_to user_url(current_user) if logged_in?
+    # redirect_to user_url(current_user) if logged_in?
+    redirect_to backbone_index_url if logged_in?
   end
 
   def require_current_user(user)
     if logged_in? && current_user != user
-      redirect_to user_url(current_user)
+      # redirect_to user_url(current_user)
+      redirect_to backbone_index_url
     elsif !logged_in?
       redirect_to new_session_url
     end
