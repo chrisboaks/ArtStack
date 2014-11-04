@@ -5,18 +5,16 @@ window.ArtStack = {
   Routers: {},
   initialize: function() {
 
-    new ArtStack.Routers.ArtworksRouter({
+    new ArtStack.Routers.Router({
       $rootEl: $("main")
     });
     ArtStack.artworks = new ArtStack.Collections.Artworks();
     ArtStack.artworks.fetch();
 
-
-    new ArtStack.Routers.ArtistsRouter({
-      $rootEl: $("main")
-    });
     ArtStack.artists = new ArtStack.Collections.Artists();
     ArtStack.artists.fetch();
+
+    ArtStack.users = new ArtStack.Collections.Users();
 
     Backbone.history.start();
   }

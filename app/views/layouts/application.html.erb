@@ -8,24 +8,27 @@
 </head>
 
 <body>
+  <% require_login %>
 
-<% if false && ENV["RAILS_ENV"] == 'development' %>
+  <% if false && ENV["RAILS_ENV"] == 'development' %>
   <%= render "layouts/devmode_info" %>
-<% end %>
+  <% end %>
 
-<%= render "layouts/header" %>
+  <%= render "layouts/header" %>
 
-<script>
-  window.currentUserId = <%= current_user.id %>;
-</script>
+  <script>
+  $(function () {
+    window.currentUserId = <%= current_user ? current_user.id : nil %>
+  });
+  </script>
 
-<%= flash[:errors] %>
+  <%= flash[:errors] %>
 
-<main>
-  <%= yield %>
-</main>
+  <main>
+    <%= yield %>
+  </main>
 
-<%= render "layouts/footer" %>
+  <%= render "layouts/footer" %>
 
 </body>
 </html>
