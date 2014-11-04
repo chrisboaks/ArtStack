@@ -5,11 +5,11 @@ ArtStack.Routers.Router = Backbone.Router.extend({
   },
 
   routes: {
-    "artists": "artistsIndex",
+    "": "artistsIndex",
     "artists/:id": "artistShow",
     "artworks": "artworksIndex",
     "artworks/:id": "artworkShow",
-    "users/:id": "userShow",
+    "users/:id": "userShow"
   },
 
   artistsIndex: function () {
@@ -47,6 +47,6 @@ ArtStack.Routers.Router = Backbone.Router.extend({
     this._currentView && this._currentView.remove();
     this._currentView = view;
     this.$rootEl.html(view.render().$el);
-  },
+  }
 
 });

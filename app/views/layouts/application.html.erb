@@ -16,12 +16,6 @@
 
   <%= render "layouts/header" %>
 
-  <script>
-  $(function () {
-    window.currentUserId = <%= current_user ? current_user.id : nil %>
-  });
-  </script>
-
   <%= flash[:errors] %>
 
   <main>

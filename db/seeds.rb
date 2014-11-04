@@ -6,17 +6,24 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-me = User.create({email: "chrisb", password: "chrisb"})
+# me = User.create({email: "chrisb", password: "chrisb"})
+me = User.find(1)
 
-User.create([
-  {email: "picasso", password: "picasso"},
-  {email: "lewitt", password: "lewitt"},
-  {email: "duschamp", password: "duschamp"}])
 
-picasso = Artist.create(name: 'Pablo Picasso')
-duschamp = Artist.create(name: 'Marcel Duschamp')
-johns = Artist.create(name: 'Jasper Johns')
-lewitt = Artist.create(name: 'Sol Lewitt')
+# User.create([
+#   {email: "picasso", password: "picasso"},
+#   {email: "lewitt", password: "lewitt"},
+#   {email: "duschamp", password: "duschamp"}])
+#
+# picasso = Artist.create(name: 'Pablo Picasso')
+# duschamp = Artist.create(name: 'Marcel Duschamp')
+# johns = Artist.create(name: 'Jasper Johns')
+# lewitt = Artist.create(name: 'Sol Lewitt')
+
+picasso = Artist.find_by(name: 'Pablo Picasso')
+duschamp = Artist.find_by(name: 'Marcel Duschamp')
+johns = Artist.find_by(name: 'Jasper Johns')
+lewitt = Artist.find_by(name: 'Sol Lewitt')
 
 Artwork.create([
   {image: 'http://erikaunapuu.files.wordpress.com/2013/05/picasso-girl-before-a-mirror.jpeg', uploader: me, artist: picasso, title: 'Girl Before a Mirror', art_type: 'painting'},

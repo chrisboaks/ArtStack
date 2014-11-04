@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     user = User.find_by_credentials(params[:user][:email], params[:user][:password])
     if user
       login(user)
-      redirect_to backbone_url
+      redirect_to backbone_index_url
     else
       flash.now[:errors] = "There was a problem with that email/password combination.  Please try again."
       render :new, :layout => false
@@ -20,4 +20,3 @@ class SessionsController < ApplicationController
   end
 
 end
-
