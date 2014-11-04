@@ -1,4 +1,5 @@
 ArtStack.Models.Artwork = Backbone.Model.extend({
+
   urlRoot: '/api/artworks',
 
   parse: function (json) {

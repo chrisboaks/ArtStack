@@ -48,14 +48,12 @@ class User < ActiveRecord::Base
     profile = user.user_profile
 
     if profile && profile.first_name != ""
-      moniker = profile.first_name
+      return profile.first_name
     elsif profile && profile.username != ""
-      moniker = profile.username
+      return profile.username
     else
-      moniker = user.email
+      return "Anonymous"
     end
-
-    moniker
   end
 
   def password=(password)

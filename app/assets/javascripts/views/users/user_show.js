@@ -1,6 +1,6 @@
 ArtStack.Views.UserShow = Backbone.View.extend({
 
-  template: JST['users/show'],
+  template: JST['users/user_show'],
 
   initialize: function () {
     this.listenTo(this.model, "sync", this.render);
