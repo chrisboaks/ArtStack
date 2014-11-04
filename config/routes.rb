@@ -42,6 +42,8 @@ Rails.application.routes.draw do
     resource :user_profiles, only: [:edit, :update, :show]
   end
 
+  resources :backbone, only: :index
+
   resources :artworks, only: [:new, :create, :show, :index]
   resources :artists, only: [:show, :index]
   resources :stacks, only: [:create, :destroy]
