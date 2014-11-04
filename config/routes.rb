@@ -1,25 +1,25 @@
 # == Route Map
 #
-#                 Prefix Verb   URI Pattern                       Controller#Action
-#                   root GET    /                                 backbone#index
-# auth_facebook_callback GET    /auth/facebook/callback(.:format) oauthcallbacks#facebook
-#               sessions POST   /sessions(.:format)               sessions#create
-#            new_session GET    /sessions/new(.:format)           sessions#new
-#                session DELETE /sessions/:id(.:format)           sessions#destroy
-#     edit_user_profiles GET    /user_profiles/edit(.:format)     user_profiles#edit
-#          user_profiles GET    /user_profiles(.:format)          user_profiles#show
-#                        PATCH  /user_profiles(.:format)          user_profiles#update
-#                        PUT    /user_profiles(.:format)          user_profiles#update
-#         backbone_index GET    /backbone(.:format)               backbone#index
-#                 stacks POST   /stacks(.:format)                 stacks#create
-#                  stack DELETE /stacks/:id(.:format)             stacks#destroy
-#               artworks POST   /artworks(.:format)               artworks#create
-#            new_artwork GET    /artworks/new(.:format)           artworks#new
-#           api_artworks GET    /api/artworks(.:format)           api/artworks#index {:format=>:json}
-#            api_artwork GET    /api/artworks/:id(.:format)       api/artworks#show {:format=>:json}
-#            api_artists GET    /api/artists(.:format)            api/artists#index {:format=>:json}
-#             api_artist GET    /api/artists/:id(.:format)        api/artists#show {:format=>:json}
-#               api_user GET    /api/users/:id(.:format)          api/users#show {:format=>:json}
+#                 Prefix Verb   URI Pattern                                 Controller#Action
+#                   root GET    /                                           backbone#index
+# auth_facebook_callback GET    /auth/facebook/callback(.:format)           oauthcallbacks#facebook
+#               sessions POST   /sessions(.:format)                         sessions#create
+#            new_session GET    /sessions/new(.:format)                     sessions#new
+#                session DELETE /sessions/:id(.:format)                     sessions#destroy
+# edit_user_user_profile GET    /users/:user_id/user_profile/edit(.:format) user_profiles#edit
+#      user_user_profile GET    /users/:user_id/user_profile(.:format)      user_profiles#show
+#                        PATCH  /users/:user_id/user_profile(.:format)      user_profiles#update
+#                        PUT    /users/:user_id/user_profile(.:format)      user_profiles#update
+#         backbone_index GET    /backbone(.:format)                         backbone#index
+#                 stacks POST   /stacks(.:format)                           stacks#create
+#                  stack DELETE /stacks/:id(.:format)                       stacks#destroy
+#               artworks POST   /artworks(.:format)                         artworks#create
+#            new_artwork GET    /artworks/new(.:format)                     artworks#new
+#           api_artworks GET    /api/artworks(.:format)                     api/artworks#index {:format=>:json}
+#            api_artwork GET    /api/artworks/:id(.:format)                 api/artworks#show {:format=>:json}
+#            api_artists GET    /api/artists(.:format)                      api/artists#index {:format=>:json}
+#             api_artist GET    /api/artists/:id(.:format)                  api/artists#show {:format=>:json}
+#               api_user GET    /api/users/:id(.:format)                    api/users#show {:format=>:json}
 #
 
 Rails.application.routes.draw do
@@ -35,7 +35,9 @@ Rails.application.routes.draw do
 
   resources :sessions, only: [:new, :create, :destroy]
 
-  resource :user_profiles, only: [:edit, :update, :show]
+  resources :users, only: [] do
+    resource :user_profile, only: [:edit, :update, :show]
+  end
 
   resources :backbone, only: :index
 

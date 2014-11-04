@@ -1,6 +1,8 @@
+<% require_current_user(User.find(params[:user_id])) %>
+
 <h2>Edit your profile</h2>
 
-<form action="<%= @action %>" method="post">
+<form action="<%= user_user_profile_url(current_user) %>" method="post">
 <%= render "layouts/auth_token" %>
 <%= render "layouts/patch_input" %>
 <input type="hidden" name="some_name" value="" id="some_name">
@@ -69,7 +71,3 @@
 <button>Submit!</button>
 
 </form>
-
-
-
-

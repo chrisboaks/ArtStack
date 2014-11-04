@@ -3,7 +3,7 @@
     <li><%= button_to "Explore", backbone_index_url, method: :get %></li>
     <% if logged_in? %>
     <li><%= button_to "Add Art", new_artwork_url, method: :get %></li>
-    <li><%= button_to "Edit Profile", edit_user_user_profiles_url(current_user), method: :get %></li>
+    <li><%= button_to "Edit Profile", edit_user_user_profile_url(current_user), method: :get %></li>
     <li><%= button_to "Log Out", session_url(current_user), method: :delete %></li>
     <% else %>
     <li><%= button_to "Log In", new_session_url, method: :get %></li>
