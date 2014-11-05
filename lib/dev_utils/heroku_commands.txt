@@ -1,0 +1,22 @@
+heroku login
+git remote add heroku ___
+git push heroku master
+rm ~/.ssh/id_*
+heroku keys:add
+heroku push
+
+heroku keys:add
+heroku logs [-t]
+
+heroku pg:reset DATABASE_URL
+heroku restart
+
+heroku pgbackups:capture
+heroku pgbackups:url
+
+
+
+heroku maintenance:on
+heroku maintenance:off
+
+heroku run rake paperclip:refresh:thumbnails CLASS=User
