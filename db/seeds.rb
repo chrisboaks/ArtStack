@@ -6,14 +6,14 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-# me = User.create({email: "chrisb", password: "chrisb"})
-me = User.find(1)
+ me = User.create({email: "chrisb", password: "chrisb"})
+#me = User.find(1)
 
 
-# User.create([
-#   {email: "picasso", password: "picasso"},
-#   {email: "lewitt", password: "lewitt"},
-#   {email: "duschamp", password: "duschamp"}])
+User.create([
+  {email: "picasso", password: "picasso"},
+  {email: "lewitt", password: "lewitt"},
+  {email: "duschamp", password: "duschamp"}])
 #
 # picasso = Artist.create(name: 'Pablo Picasso')
 # duschamp = Artist.create(name: 'Marcel Duschamp')

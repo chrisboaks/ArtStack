@@ -15,7 +15,8 @@ This site is a clone of theartstack.com, and it functions as a Pinterest-type si
 #Todos:
 
 - Stacks
-- Capitalize titles
+- Style input
+- Use sized images
 - Search
 - Static pages controller, blank page for backbone
 - Clarify Sign In / Sign Up distinction

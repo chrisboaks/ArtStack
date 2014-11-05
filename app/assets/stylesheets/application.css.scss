@@ -193,6 +193,7 @@ input:not([type='submit']), textarea {
   padding: 8px;
   border-radius: 3px;
   cursor: text;
+  outline: none;
 
   &:focus {
     border: 1px solid green;
