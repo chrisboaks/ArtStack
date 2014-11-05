@@ -1,0 +1,4 @@
+
+
+#sets saved db
+pg_restore -d name_of_your_dev_database path/to/database/dump

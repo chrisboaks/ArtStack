@@ -6,6 +6,7 @@ ArtStack.Routers.Router = Backbone.Router.extend({
 
   routes: {
     "": "artworksIndex",
+    "_=_": "artworksIndex",           // For seamless Facebook logins
     "artists/:id": "artistShow",
     "artists": "artistsIndex",
     "artworks/:id": "artworkShow",
