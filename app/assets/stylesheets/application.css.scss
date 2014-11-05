@@ -230,18 +230,30 @@ img {
 div.img-container-sm {
   display: inline-block;
   float: left;
-  max-width: 150px;
+  max-width: 260px;
   padding: 20px;
 }
 
 div.img-container-med {
   display: inline-block;
   float: left;
-  max-width: 300px;
+  max-width: 410px;
   padding: 20px;
 }
 
 div.img-container-lrg {
-  max-width: 600px;
+  max-width: 860px;
   padding: 20px;
+}
+
+ul.artworks-index {
+  width: 300px;
+  display: block;
+  float: left;
+}
+
+ul.artist-show-list {
+  width: 450px;
+  display: block;
+  float: left;
 }

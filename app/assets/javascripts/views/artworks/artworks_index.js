@@ -17,10 +17,18 @@ ArtStack.Views.ArtworksIndex = Backbone.View.extend({
     this.$el.html(renderedContent);
     var that = this;
 
+    var uls = $('#backbone-content ul').toArray();
+
     this.collection.each(function (artwork) {
+
       var view = new ArtStack.Views.ArtworksIndexArtworkLI({ model: artwork });
       that.subviews.push(view);
-      that.$el.find("#artworks-index").append(view.render().$el);
+
+      var lowest = uls.reduce(function (a, b) {
+        return $(a).height() < $(b).height() ? a : b;
+      });
+
+      $(lowest).append(view.render().$el);
     });
     return this;
   },
