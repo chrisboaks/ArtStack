@@ -35,12 +35,32 @@ class Artwork < ActiveRecord::Base
   has_many :stacking_users, through: :stacks, source: :user
 
   has_attached_file :image, styles: {
-    medium: "300x300>",
-    thumb: "100x100>",
-    large: "600x600>"
+    thumb: "150x>",
+    small: "300x>",
+    medium: "450x>",
+    large: "900x>"
   }
+
+  before_save :extract_dimensions
+  serialize :dimensions
 
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 
+  def scaled_height_by_width(scaled_width)
+    width, height = self.dimensions
+    return height if width <= scaled_width
+    scale_factor = (scaled_width / width.to_f)
+    Integer(height * scale_factor)
+  end
+
+  private
+
+  def extract_dimensions
+    tempfile = image.queued_for_write[:original]
+    unless tempfile.nil?
+      geometry = Paperclip::Geometry.from_file(tempfile)
+      self.dimensions = [geometry.width.to_i, geometry.height.to_i]
+    end
+  end
 
 end
