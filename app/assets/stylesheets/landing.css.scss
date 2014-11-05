@@ -1,4 +1,7 @@
 .landing-body{
+
+  min-height: 820px;
+
   img, h1, h2, p, label, ul {
     display: block;
     margin: 0 auto;
@@ -58,33 +61,17 @@
     height: 65px;
   }
 
-  a#facebook-signup {
-    margin: 0 auto;
-    display: block;
-    width: 425px;
-    height: 54px;
-    color: white;
-    line-height: 55px;
-    font-size: 22px;
-    text-decoration: none;
-    text-align: center;
-    text-indent: 38px;
-    background-size: 800px;
-    background-image: image-url("long-facebook-button.png");
-    font-weight: 100;
-  }
-
   a#facebook-signin {
     margin: 0 auto;
     display: block;
-    width: 356px;
+    width: 391px;
     height: 54px;
     color: white;
     line-height: 55px;
     font-size: 22px;
     text-decoration: none;
     text-align: center;
-    text-indent: 38px;
+    text-indent: 29px;
     background-size: 800px;
     background-image: image-url("long-facebook-button.png");
     font-weight: 100;
