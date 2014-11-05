@@ -42,6 +42,11 @@ time, mark, audio, video {
 
 /* SETUP */
 
+@font-face {
+  font-family: "Droid Sans";
+  src: font-url("DroidSans.ttf") format('truetype');
+}
+
 html, body, div, span, header, footer, menu, nav, section, input,
 h1, h2, h3, p, a, img, ul, li, form, label, caption, article, button {
   margin: 0;
@@ -52,7 +57,7 @@ h1, h2, h3, p, a, img, ul, li, form, label, caption, article, button {
   text-decoration: inherit;
   font-size: 100%;
   font: inherit;
-  font-family: 'Gill Sans', Arial, sans-serif;
+  font-family: "Droid Sans";
 }
 
 ul {
