@@ -42,6 +42,7 @@ gem 'annotate', '~> 2.6.5'
 gem 'backbone-on-rails'
 gem 'omniauth-facebook'
 gem 'figaro'
+gem 'titlecase'
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 
@@ -56,6 +57,3 @@ end
 group :production do
   gem 'rails_12factor'
 end
-
-
-

@@ -6,11 +6,12 @@ class ArtworksController < ApplicationController
   end
 
   def create
-    name = params[:artist_name].split.map(&:capitalize).join(' ')
+    name = params[:artist_name].titlecase
     @artist = Artist.find_or_initialize_by(name: name)
 
     @artwork = @artist.artworks.new(artwork_params)
     @artwork.uploader_id = current_user.id
+    @artwork.title = artwork_params[:title].titlecase
 
     if @artwork.save
       redirect_to "/backbone/#"
