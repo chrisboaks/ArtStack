@@ -4,5 +4,6 @@ json.extract! @artist, :id, :name
 
 json.artworks @artist.artworks do |artwork|
   json.extract! artwork, :id, :title, :image, :art_type, :created_at
+  json.image artwork.image.url(:medium)
   json.stacked current_user_stacked_work_ids.include?(artwork.id)
 end

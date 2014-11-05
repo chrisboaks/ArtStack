@@ -1,7 +1,12 @@
 <h1>Backbone Artwork!</h1>
 
 <div class="img-container-lrg">
+
+<a href="<%= artwork.escape("full_size_url") %>">
 <img src="<%= artwork.escape("image") %>">
+</a>
+
+
 
 <p>
 <%= artwork.escape("title") %>
