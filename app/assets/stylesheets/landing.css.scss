@@ -25,17 +25,20 @@
     padding-top: 10px;
   }
 
-  ul {
-    display: block;
-    margin: 0 auto;
-    width: 190px;
-    padding-bottom: 50px;
+  section {
+    text-align: center;
+  }
 
+  ul {
+    display: inline-block;
+    margin: 0 auto;
+    text-align: center;
+    padding-bottom: 50px;
   }
 
   li {
-    display: block;
-    float: left;
+
+    text-align: left;
     margin: 2px;
   }
 

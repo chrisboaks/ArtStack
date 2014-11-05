@@ -43,4 +43,3 @@ json.user_artists do
     json.extract! artist, :id, :name
   end
 end
-
