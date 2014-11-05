@@ -1,0 +1,42 @@
+/* SPECIALTY STYLES */
+
+#flash-errors {
+  display: inline-block;
+  width: 400px;
+  margin: auto;
+  color: red;
+  font-weight: bold;
+}
+
+#flash-notice {
+  display: inline-block;
+  width: 400px;
+  margin: auto;
+  color: green;
+  font-weight: bold;
+}
+
+div {
+  .devmode {                               //delete?
+    display: block;
+    width: 400px;
+    margin: 0 auto;
+    border: 1px solid red;
+    background: red;
+  }
+
+
+}
+
+#welcome-user {
+  display: relative;
+  float: right;
+  padding: 5px 10px 0 0;
+}
+
+br.separator {
+  border-top: 1px solid #ccc;
+  height: 1px;
+  margin: 20px auto;
+  width: 420px;
+}

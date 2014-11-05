@@ -1,0 +1,49 @@
+/* INPUTS */
+
+input:not([type='submit']), textarea {
+  border: 1px solid black;
+  display: block;
+  padding: 8px;
+  border-radius: 3px;
+  cursor: text;
+  outline: none;
+
+  &:focus {
+    border: 1px solid green;
+    box-shadow: 0 0 1px 1px green;
+  }
+}
+
+input[type='checkbox'] {
+  display: inline;
+}
+
+button, input[type='submit'] {
+  padding: 5px 10px;
+  font-size: 16px;
+  background: #ccc;
+  margin: 5px;
+  border-radius: 10px;
+
+  &:hover {
+    background: #aaa;
+  }
+}
+
+label.input {
+  display: block;
+  margin: 10px 0 0 0;
+}
+
+input[type="checkbox"] {
+  display: inline;
+}
+
+label.checkbox-label {
+  margin: 3px;
+  display: inline;
+}
+
+ul.checkbox-list li {
+  margin: 5px;
+}
