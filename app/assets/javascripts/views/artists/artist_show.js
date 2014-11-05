@@ -17,30 +17,6 @@ ArtStack.Views.ArtistShow = Backbone.View.extend({
     var that = this;
     var uls = $('ul.artist-show-list').toArray();
 
-
-// old
-    // if (this.model.artworks) {
-    //   this.model.artworks.each(function (artwork) {
-    //     var view = new ArtStack.Views.ArtistShowArtworkLI({model: artwork});
-    //     that.subviews.push(view);
-    //     that.$el.find("#" + that.model.id).append(view.render().$el);
-    //   });
-    // }
-
-// new
-    // this.collection.each(function (artwork) {
-    //
-    //   var view = new ArtStack.Views.ArtworksIndexArtworkLI({ model: artwork });
-    //   that.subviews.push(view);
-    //
-    //   var lowest = uls.reduce(function (a, b) {
-    //     return $(a).height() < $(b).height() ? a : b;
-    //   });
-    //
-    //   $(lowest).append(view.render().$el);
-    // });
-
-
     if (this.model.artworks) {
       this.model.artworks.each(function (artwork) {
         var view = new ArtStack.Views.ArtistShowArtworkLI({model: artwork});
