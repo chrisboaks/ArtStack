@@ -5,13 +5,14 @@ ArtStack.Views.ArtworksIndex = Backbone.View.extend({
   initialize: function () {
     this.listenTo(this.collection, "add", this.addArtwork);
     this.subviews = [];
+    this.ul_lengths = [0, 0, 0];
   },
 
   render: function () {
     var renderedContent = this.template({ artworks: this.collection });
     this.$el.html(renderedContent);
     var that = this;
-    console.log(this.collection)
+
     this.collection.each(function (artwork) {
       that.addArtwork(artwork);
     });
@@ -27,13 +28,19 @@ ArtStack.Views.ArtworksIndex = Backbone.View.extend({
     var view = new ArtStack.Views.SmallArtworkLI({ model: artwork });
     this.subviews.push(view);
 
-    var lowest = uls.reduce(function (a, b) {
-      return $(a).height() < $(b).height() ? a : b;
-    });
+    var shortest_ul_index = 0;
 
-    $(lowest).prepend(view.render().$el);
+    for (var i = 0; i < 3; i++) {
+      if (this.ul_lengths[shortest_ul_index] > this.ul_lengths[i]) {
+        shortest_ul_index = i;
+      }
+    }
+
+    $(uls[shortest_ul_index]).prepend(view.render().$el);
+    this.ul_lengths[shortest_ul_index] += artwork.get('height');
 
   },
+
 
   remove: function () {
     this.subviews.each(function (sub) {
