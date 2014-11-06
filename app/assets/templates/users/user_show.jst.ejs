@@ -1,5 +1,19 @@
-<h1>Backbone <%= user.escape('moniker') %>'s favorite artworks</h1>
+<h1>Backbone <%= user.escape('moniker') %>'s profile</h1>
 
-<ul id="artworks-index-0" class="artworks-index"></ul>
-<ul id="artworks-index-1" class="artworks-index"></ul>
-<ul id="artworks-index-2" class="artworks-index"></ul>
+<% if(user.user_profile){ %>
+  <section id="user-profile" class="user-profile group">
+  <h2><%= user.escape('moniker') %>'s information:</h2>
+  </section>
+<% } else { %>
+  <h2>This user hasn't entered a profile :(</h2>
+<% } %>
+
+
+<% if(user.user_artworks) { %>
+
+  <h2><%= user.escape('moniker') %>'s favorite artworks:</h2>
+
+  <ul class="artist-show-list" id="art-list-0"></ul>
+  <ul class="artist-show-list" id="art-list-1"></ul>
+
+<% } %>
