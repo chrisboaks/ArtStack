@@ -1,19 +1,20 @@
-<div class="artwork-wrapper">
-<div class="img-container-med" id="artwork-<%= artwork.id %>">
+<figure class="img-container-med" id="artwork-<%= artwork.get('id') %>">
 
-<a href="/backbone/#artworks/<%= artwork.id %>">
-<img src="<%= artwork.escape('image') %>">
-</a>
-
-<a href="/backbone/#artworks/<%= artwork.id %>">
-<%= artwork.escape('title') %>
-</a>
-
-<% if (artwork.get('artist')) { %>
-  <a href="/backbone/#artworks/<%= artwork.artist.id %>">
-  <%= artwork.artist.escape('name') %>
+  <a href="/backbone/#artworks/<%= artwork.get('id') %>" class="art-image">
+    <img src="<%= artwork.escape('image') %>">
   </a>
-<% } %>
 
-</div>
-</div>
+  <figcaption>
+    <h4>
+      <a href="/backbone/#artworks/<%= artwork.get('id') %>">
+        <%= artwork.escape('title') %>
+      </a>
+    </h4>
+    <h4>
+      <a href="/backbone/#artists/<%= artwork.get('artist_id') %>">
+        <%= artwork.escape('artist_name') %>
+      </a>
+    </h4>
+  </figcaption>
+
+</figure>
