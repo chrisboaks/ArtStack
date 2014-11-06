@@ -1,5 +1,9 @@
 /* INPUTS */
 
+button, input {
+
+}
+
 input:not([type='submit']), textarea {
   border: 1px solid black;
   display: block;
@@ -24,9 +28,12 @@ button, input[type='submit'] {
   background: #ccc;
   margin: 5px;
   border-radius: 10px;
+  border: 2px solid #222;
+  text-shadow: 0 0 10px #ddd;
 
   &:hover {
     background: #aaa;
+    text-shadow: 0 0 0 10px #bbb;
   }
 }
 

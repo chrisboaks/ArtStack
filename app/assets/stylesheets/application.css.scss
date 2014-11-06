@@ -18,7 +18,13 @@
 
 @font-face {
   font-family: "Droid Sans";
-  src: font-url("DroidSans.ttf") format('truetype');
+  src: font-url("DroidSans.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Droid Sans";
+  src: font-url("DroidSans-Bold.ttf") format("truetype");
+  font-weight: bold;
 }
 
 html, body, div, span, header, footer, menu, nav, section, input,
@@ -26,12 +32,16 @@ h1, h2, h3, p, a, img, ul, li, form, label, caption, article, button {
   margin: 0;
   padding: 0;
   border: 0;
-  color: inherit;
+  color: #111;
   background: transparent;
   text-decoration: inherit;
   font-size: 100%;
   font: inherit;
   font-family: "Droid Sans";
+}
+
+strong {
+  font-family: "Droid Sans Bold";
 }
 
 ul {
@@ -44,6 +54,7 @@ body {
 
 button, a, input {
   cursor: pointer;
+  outline: none
 }
 
 textarea, input {
@@ -65,28 +76,27 @@ body {
 
 header {
   background: #ddd;
-  padding: 10px 25px;
+  padding: 7px 25px;
   position: fixed;
   left: 0;
   right: 0;
   top: 0;
 
-  div {
+  div#logo {
     display: block;
     float: left;
-    margin-top: 0;
+    margin-top: 3px;
   }
 
   ul {
     display: block;
     float: right;
-    margin-top: 0;
   }
 
   li {
     display: inline;
     float: left;
-    padding: 5px;
+    padding: 3px 5px;
   }
 
 }
