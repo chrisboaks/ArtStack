@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
  me = User.create({email: "chrisb", password: "chrisb"})
-#me = User.find(1)
+# me = User.find(1)
 
 
 User.create([
@@ -15,10 +15,10 @@ User.create([
   {email: "lewitt", password: "lewitt"},
   {email: "duschamp", password: "duschamp"}])
 #
-# picasso = Artist.create(name: 'Pablo Picasso')
-# duschamp = Artist.create(name: 'Marcel Duschamp')
-# johns = Artist.create(name: 'Jasper Johns')
-# lewitt = Artist.create(name: 'Sol Lewitt')
+picasso = Artist.create(name: 'Pablo Picasso')
+duschamp = Artist.create(name: 'Marcel Duschamp')
+johns = Artist.create(name: 'Jasper Johns')
+lewitt = Artist.create(name: 'Sol Lewitt')
 
 picasso = Artist.find_by(name: 'Pablo Picasso')
 duschamp = Artist.find_by(name: 'Marcel Duschamp')
@@ -27,6 +27,8 @@ lewitt = Artist.find_by(name: 'Sol Lewitt')
 
 Artwork.create([
   {image: 'http://erikaunapuu.files.wordpress.com/2013/05/picasso-girl-before-a-mirror.jpeg', uploader: me, artist: picasso, title: 'Girl Before a Mirror', art_type: 'painting'},
+
+Artwork.create([
   {image: 'http://cp91279.biography.com/1000509261001/1000509261001_1910637818001_TDIH-Picasso-Guernica.jpg', uploader: me, artist: picasso, title: 'Guernica', art_type: 'painting'},
   {image: 'http://upload.wikimedia.org/wikipedia/commons/c/ce/Marcel_Duchamp.jpg', uploader: me, artist: duschamp, title: 'Fountain', art_type: 'sculpture'},
   {image: 'http://upload.wikimedia.org/wikipedia/en/c/c0/Duchamp_-_Nude_Descending_a_Staircase.jpg', uploader: me, artist: duschamp, title: 'Nude Descending a Staircase', art_type: 'painting'},

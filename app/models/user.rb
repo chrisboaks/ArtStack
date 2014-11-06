@@ -47,9 +47,9 @@ class User < ActiveRecord::Base
   def self.moniker(user)
     profile = user.user_profile
 
-    if profile && profile.first_name != ""
+    if profile && !profile.first_name.blank?
       return profile.first_name
-    elsif profile && profile.username != ""
+    elsif profile && !profile.username.blank?
       return profile.username
     else
       return "Anonymous"
