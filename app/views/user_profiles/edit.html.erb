@@ -3,4 +3,5 @@
 <% @action = user_user_profile_url(current_user) %>
 <% @method = 'patch' %>
 
+<%= button_to "View Profile", "/backbone/#users/#{current_user.id}", method: :get %>
 <%= render 'form' %>
