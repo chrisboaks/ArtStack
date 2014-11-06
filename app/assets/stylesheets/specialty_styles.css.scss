@@ -41,8 +41,6 @@ br.separator {
 
 section#user-profile {
 
-
-
   ul.user-profile {
     display: inline-block;
     margin: auto;
@@ -58,11 +56,14 @@ section#user-profile {
       text-transform: capitalize;
       display: inline-block;
       width: 100px;
+      vertical-align: top;
     }
 
     div.attribute-value {
       display: inline-block;
       font-weight: bold;
+      width: 750px;
+      padding: 5px 0;
     }
 
   }

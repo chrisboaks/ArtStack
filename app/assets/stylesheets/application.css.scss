@@ -28,7 +28,7 @@
 }
 
 html, body, div, span, header, footer, menu, nav, section, input,
-h1, h2, h3, p, a, img, ul, li, form, label, caption, article, button {
+h1, h2, h3, h4, p, a, img, ul, li, form, label, caption, article, button, figure {
   margin: 0;
   padding: 0;
   border: 0;
@@ -81,6 +81,7 @@ header {
   left: 0;
   right: 0;
   top: 0;
+  z-index: 1000;
 
   div#logo {
     display: block;
