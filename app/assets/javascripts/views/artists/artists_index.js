@@ -24,7 +24,7 @@ ArtStack.Views.ArtistsIndex = Backbone.View.extend({
   },
 
   remove: function () {
-    _.(this.subviews).each(function (sub) {
+    _(this.subviews).each(function (sub) {
       sub.remove();
     });
     Backbone.View.prototype.remove.call(this);
