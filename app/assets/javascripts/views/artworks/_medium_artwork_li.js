@@ -1,6 +1,6 @@
-ArtStack.Views.ArtistShowArtworkLI = Backbone.View.extend({
+ArtStack.Views.MediumArtworkLI = Backbone.View.extend({
 
-  template: JST['artworks/_artist_show_artwork_li'],
+  template: JST['artworks/_medium_artwork_li'],
 
   stackTemplate: JST['stacks/_stack_button'],
 
