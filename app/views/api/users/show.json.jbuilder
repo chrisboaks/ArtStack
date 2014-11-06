@@ -32,21 +32,14 @@ json.user_artworks do
       json.stack_id Stack.find_by(artwork_id: artwork.id, user_id: current_user.id).id
     else
       json.stacked false
-    end   
+    end
 
-    json.extract! artwork,
-      :id,
-      :artist_id,
-      :title,
-      :art_type,
-      :image_file_name
-  end
-end
+    json.image artwork.image.url(:large)
 
-user_artists = (@user.uploaded_artists + @user.stacked_artists).uniq
+    json.extract! artwork, :id, :title, :art_type
 
-json.user_artists do
-  json.array! user_artists do |artist|
-    json.extract! artist, :id, :name
+    json.artist_id artwork.artist.id
+    json.artist_name artwork.artist.name
+
   end
 end

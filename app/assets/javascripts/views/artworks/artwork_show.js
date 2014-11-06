@@ -16,7 +16,7 @@ ArtStack.Views.ArtworkShow = Backbone.View.extend({
     var renderedContent = this.template({ artwork: this.model });
     var button = this.stackTemplate({ artwork: this.model });
     this.$el.html(renderedContent);
-    this.$el.append(button);
+    this.$el.find("#img-container-" + this.model.get('id')).append(button);
     return this;
   },
 

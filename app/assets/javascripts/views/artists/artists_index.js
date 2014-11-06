@@ -7,11 +7,6 @@ ArtStack.Views.ArtistsIndex = Backbone.View.extend({
     this.subviews = [];
   },
 
-  events: {
-
-    //TODO
-  },
-
   render: function () {
     var renderedContent = this.template({ artists: this.collection });
     this.$el.html(renderedContent);
@@ -28,10 +23,6 @@ ArtStack.Views.ArtistsIndex = Backbone.View.extend({
     return this;
   },
 
-  toggleStack: function (event) {
-    //TODO
-  },
-
   remove: function () {
     this.subviews.forEach(function (sub) {
       sub.remove();
@@ -40,3 +31,5 @@ ArtStack.Views.ArtistsIndex = Backbone.View.extend({
   },
 
 });
+
+//TODO REFACTOR OR DELETE
