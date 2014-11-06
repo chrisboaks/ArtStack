@@ -10,15 +10,8 @@ json.artist do
   json.extract! @artwork.artist, :id, :name
 end
 
-json.uploader do
-  json.extract! @artwork.uploader, :id
-
-  if @artwork.uploader.user_profile
-    json.profile do
-      json.extract! @artwork.uploader.user_profile, :username
-    end
-  end
-end
+json.uploader_id @artwork.uploader.id
+json.uploader_moniker User.moniker(@artwork.uploader)
 
 if current_user_stacked_work_ids.include?(@artwork.id)
   json.stacked true

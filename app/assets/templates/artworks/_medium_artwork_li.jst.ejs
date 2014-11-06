@@ -9,9 +9,11 @@
 <%= artwork.escape('title') %>
 </a>
 
-<p>
-Stacked: <%= artwork.get('stacked') %>
-</p>
+<% if (artwork.get('artist')) { %>
+  <a href="/backbone/#artworks/<%= artwork.artist.id %>">
+  <%= artwork.artist.escape('name') %>
+  </a>
+<% } %>
 
 </div>
 </div>

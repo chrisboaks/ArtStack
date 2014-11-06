@@ -6,8 +6,6 @@
 <img src="<%= artwork.escape("image") %>">
 </a>
 
-
-
 <p>
 <%= artwork.escape("title") %>
 </p>
@@ -19,6 +17,7 @@
 </p>
 
 <p>
-Stacked: <%= artwork.get('stacked') %>
+  Uploader: <a href="/backbone/#users/<%= artwork.get('uploader_id') %>"><%= artwork.escape("uploader_moniker") %></a>
 </p>
+
 </div>
