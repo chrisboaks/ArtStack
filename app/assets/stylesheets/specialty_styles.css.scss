@@ -16,17 +16,15 @@
   font-weight: bold;
 }
 
-div {
-  .devmode {                               //delete?
-    display: block;
-    width: 400px;
-    margin: 0 auto;
-    border: 1px solid red;
-    background: red;
-  }
 
-
+div.devmode {                               //delete?
+  display: block;
+  width: 400px;
+  margin: 0 auto;
+  border: 1px solid red;
+  background: red;
 }
+
 
 #welcome-user {
   display: relative;
