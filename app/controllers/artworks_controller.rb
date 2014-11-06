@@ -14,7 +14,7 @@ class ArtworksController < ApplicationController
     @artwork.title = artwork_params[:title].titlecase
 
     if @artwork.save
-      redirect_to "/backbone/#"
+      redirect_to "#"
     else
       flash[:errors] = @artwork.errors.full_messages
       render :new
