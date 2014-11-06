@@ -24,7 +24,7 @@ class UserProfilesController < ApplicationController
   def update
     @user_profile = UserProfile.find_or_initialize_by(user: current_user)
     if @user_profile.update(user_profile_params)
-      redirect_to backbone_index_url
+      redirect_to root_url
     else
       flash[:errors] = @user_profile.errors.full_messages
       render :edit

@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
 
     if @user && @user.is_password?(password)
       login(@user)
-      redirect_to backbone_index_url
+      redirect_to root_url
     elsif @user && @user.provider
       redirect_to "/auth/facebook"
     elsif @user
@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
     elsif User.new(email: email, password: password).save
       login(User.find_by(email: email))
       flash[:notice] = "New user successfully created!"
-      redirect_to backbone_index_url
+      redirect_to root_url
     else
       user = User.new(email: email, password: password)
       user.valid?

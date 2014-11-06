@@ -1,17 +1,17 @@
 <figure class="img-container-sm" id="artwork-<%= artwork.get('id') %>">
 
-  <a href="/backbone/#artworks/<%= artwork.get('id') %>" class="art-image">
+  <a href="#artworks/<%= artwork.get('id') %>" class="art-image">
     <img src="<%= artwork.escape('image') %>">
   </a>
 
   <figcaption>
     <h4>
-      <a href="/backbone/#artworks/<%= artwork.get('id') %>">
+      <a href="#artworks/<%= artwork.get('id') %>">
         <%= artwork.escape('title') %>
       </a>
     </h4>
     <h4>
-      <a href="/backbone/#artists/<%= artwork.get('artist_id') %>">
+      <a href="#artists/<%= artwork.get('artist_id') %>">
         <%= artwork.escape('artist_name') %>
       </a>
     </h4>
