@@ -5,6 +5,7 @@
 $(document).ready(function(){
   ArtStack.initialize();
   window.currentUserId = <%= current_user.id %>
+  window.formAuthenticityToken = "<%= form_authenticity_token %>"
   if (this.model) {
     this.model.getOrFetch();
   }

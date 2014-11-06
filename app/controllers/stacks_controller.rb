@@ -1,4 +1,5 @@
 class StacksController < ApplicationController
+
   def create
     artwork = Artwork.find(params[:artwork])
     @stack = Stack.create({user: current_user, artwork: artwork})
@@ -12,7 +13,6 @@ class StacksController < ApplicationController
     redirect_to artwork_url(artwork_id)
   end
 
-
-  private
-
 end
+
+# TODO DELETE THIS
