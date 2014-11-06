@@ -18,6 +18,11 @@ json.uploader do
   end
 end
 
-json.stacked current_user_stacked_work_ids.include?(@artwork.id)
+if current_user_stacked_work_ids.include?(@artwork.id)
+  json.stacked true
+  json.stack_id Stack.find_by(artwork_id: @artwork.id, user_id: current_user.id).id
+else
+  json.stacked false
+end
 
 # good

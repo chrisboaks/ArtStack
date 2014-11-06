@@ -26,7 +26,14 @@ user_artworks = (@user.uploaded_works + @user.stacked_works).uniq
 
 json.user_artworks do
   json.array! user_artworks do |artwork|
-    json.stacked current_user_stacked_work_ids.include?(artwork.id)
+
+    if current_user_stacked_work_ids.include?(artwork.id)
+      json.stacked true
+      json.stack_id Stack.find_by(artwork_id: artwork.id, user_id: current_user.id).id
+    else
+      json.stacked false
+    end   
+
     json.extract! artwork,
       :id,
       :artist_id,
