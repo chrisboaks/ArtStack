@@ -22,7 +22,7 @@ module ArtStack
 
     config.assets.paths << Rails.root.join('vendor', 'assets', 'fonts')
 
-    config.assets.precompile += %w(DroidSans.ttf)
+    config.assets.precompile += %w(DroidSans.ttf DroidSans-Bold.ttf)
 
     config.paperclip_defaults = {
       :storage => :s3,
