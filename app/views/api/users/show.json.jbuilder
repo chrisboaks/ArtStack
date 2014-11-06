@@ -5,19 +5,18 @@ json.extract! @user, :email, :id
 json.moniker User.moniker(@user)
 
 if @user.user_profile
-json.user_profile do
-  json.extract! @user.user_profile,
-    :username,
-    :first_name,
-    :location,
-    :bio,
-    :is_artist,
-    :is_art_professional,
-    :is_collector,
-    :is_curator,
-    :is_art_writer,
-    :is_student,
-    :website
+
+  json.user_profile do
+
+    json.extract! @user.user_profile,
+      :username,
+      :first_name,
+      :location,
+      :bio
+
+    json.description @user.user_profile.description.join(", ")
+
+    json.website @user.user_profile.website
 
   end
 end
@@ -35,6 +34,8 @@ json.user_artworks do
     end
 
     json.image artwork.image.url(:large)
+
+    json.height artwork.scaled_height_by_width(450)
 
     json.extract! artwork, :id, :title, :art_type
 

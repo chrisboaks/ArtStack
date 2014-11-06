@@ -23,7 +23,7 @@ ArtStack.Views.ArtistShow = Backbone.View.extend({
 
         $(uls[shortest_ul_index]).prepend(view.render().$el);
         that.ul_lengths[shortest_ul_index] += artwork.get('height');
-        console.log(that.ul_lengths);
+
       });
     };
 

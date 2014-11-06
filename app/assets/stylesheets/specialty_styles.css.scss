@@ -38,3 +38,32 @@ br.separator {
   margin: 20px auto;
   width: 420px;
 }
+
+section#user-profile {
+
+
+
+  ul.user-profile {
+    display: inline-block;
+    margin: auto;
+    text-align: center;
+    font-size: 16px;
+    padding: 20px;
+
+    li {
+      text-align: left;
+    }
+
+    div.attribute-name {
+      text-transform: capitalize;
+      display: inline-block;
+      width: 100px;
+    }
+
+    div.attribute-value {
+      display: inline-block;
+      font-weight: bold;
+    }
+
+  }
+}
