@@ -19,7 +19,7 @@ ArtStack.Views.UserShow = Backbone.View.extend({
 
     if (this.model.user_artworks) {
       this.model.user_artworks.each(function (artwork) {
-        var view = new ArtStack.Views.ArtworkListItem({ model: artwork });
+        var view = new ArtStack.Views.ArtworksIndexArtworkLI({ model: artwork });
         that.subviews.push(view);
         that.$el.find("#artworks-index").append(view.render().$el);
       });

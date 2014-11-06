@@ -7,10 +7,6 @@ ArtStack.Views.ArtistShow = Backbone.View.extend({
     this.subviews = [];
   },
 
-  // events: {
-//     "click button": "toggleStack"
-//   },
-
   render: function () {
     var renderedContent = this.template({ artist: this.model });
     this.$el.html(renderedContent);
@@ -28,10 +24,6 @@ ArtStack.Views.ArtistShow = Backbone.View.extend({
     };
 
     return this;
-  },
-
-  toggleStack: function (event) {
-    //TODO
   },
 
 });
