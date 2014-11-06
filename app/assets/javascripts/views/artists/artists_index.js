@@ -14,7 +14,7 @@ ArtStack.Views.ArtistsIndex = Backbone.View.extend({
 
     this.collection.each(function (artist) {
       artist.artworks.each(function (artwork) {
-        var view = new ArtStack.Views.ArtistShowArtworkLI({model: artwork});
+        var view = new ArtStack.Views.MediumArtworkLI({model: artwork});
         that.subviews.push(view);
         that.$el.find("#" + artist.id).append(view.render().$el);
       });

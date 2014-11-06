@@ -23,7 +23,7 @@ ArtStack.Views.ArtworksIndex = Backbone.View.extend({
 
     var uls = $('#backbone-content ul').toArray();
 
-    var view = new ArtStack.Views.ArtworksIndexArtworkLI({ model: artwork });
+    var view = new ArtStack.Views.SmallArtworkLI({ model: artwork });
     this.subviews.push(view);
 
     var lowest = uls.reduce(function (a, b) {

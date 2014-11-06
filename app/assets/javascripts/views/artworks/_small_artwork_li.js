@@ -1,6 +1,6 @@
-ArtStack.Views.ArtworksIndexArtworkLI = Backbone.View.extend({
+ArtStack.Views.SmallArtworkLI = Backbone.View.extend({
 
-  template: JST['artworks/_artworks_index_artwork_li'],
+  template: JST['artworks/_small_artwork_li'],
 
   stackTemplate: JST['stacks/_stack_button'],
 
