@@ -19,7 +19,7 @@ ArtStack.Views.ArtistShow = Backbone.View.extend({
         that.subviews.push(view);
 
         var shortest = ($(uls[0]).height() < $(uls[1]).height() ? uls[0] : uls[1]);
-        $(shortest).append(view.render().$el);
+        $(shortest).prepend(view.render().$el);
       });
     };
 
