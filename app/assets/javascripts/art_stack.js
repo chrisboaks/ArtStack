@@ -15,11 +15,6 @@ window.ArtStack = {
     ArtStack.artists = new ArtStack.Collections.Artists();
     ArtStack.artists.fetch();
 
-    // ArtStack.stacks = new ArtStack.Collections.Stacks();
-    // ArtStack.stacks.fetch();
-
-    // ArtStack.users = new ArtStack.Collections.Users();
-
     Backbone.history.start();
   }
 };

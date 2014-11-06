@@ -23,12 +23,12 @@ ArtStack.Views.ArtistsIndex = Backbone.View.extend({
     return this;
   },
 
-  // remove: function () {
-  //   _.(this.subviews).each(function (sub) {
-  //     sub.remove();
-  //   });
-  //   Backbone.View.prototype.remove.call(this);
-  // },
+  remove: function () {
+    _.(this.subviews).each(function (sub) {
+      sub.remove();
+    });
+    Backbone.View.prototype.remove.call(this);
+  },
 
 });
 

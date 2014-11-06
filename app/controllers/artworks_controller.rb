@@ -26,7 +26,7 @@ class ArtworksController < ApplicationController
   end
 
   def index
-    @artworks = Artwork.includes(:artist).all
+    @artworks = Artwork.includes(:artist).order("id ASC").all
   end
 
   private

@@ -1,7 +1,7 @@
 class Api::ArtworksController < ApplicationController
 
   def index
-    @artworks = Artwork.includes(:artist).all
+    @artworks = Artwork.includes(:artist).order("id ASC").all
     render :index
   end
 
