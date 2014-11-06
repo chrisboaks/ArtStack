@@ -22,7 +22,7 @@ ArtStack.Collections.Artworks = Backbone.Collection.extend({
   },
 
   comparator: function (model) {
-    return -model.id;
+    return model.id;
   },
 
 });
