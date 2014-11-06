@@ -6,12 +6,7 @@ ArtStack.Views.UserShow = Backbone.View.extend({
     this.listenTo(this.model, "sync", this.render);
     this.subviews = [];
   },
-  //
-  // events: {
-  //   "click button": "toggleStack"
-  //   //TODO
-  // },
-  //
+
   render: function () {
     var renderedContent = this.template({ user: this.model });
     this.$el.html(renderedContent);
@@ -26,9 +21,5 @@ ArtStack.Views.UserShow = Backbone.View.extend({
     }
     return this;
   },
-  //
-  // toggleStack: function (event) {
-  //   //TODO
-  // },
 
 });

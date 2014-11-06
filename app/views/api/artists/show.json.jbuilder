@@ -13,4 +13,6 @@ json.artworks @artist.artworks do |artwork|
     json.stacked false
   end
 
+  json.height artwork.scaled_height_by_width(450)
+
 end

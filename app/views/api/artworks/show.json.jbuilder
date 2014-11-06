@@ -4,6 +4,8 @@ json.extract! @artwork, :id, :title, :image, :art_type, :created_at
 json.image @artwork.image.url(:large)
 json.full_size_url @artwork.image.url
 
+json.height @artwork.scaled_height_by_width(300)
+
 json.artist do
   json.extract! @artwork.artist, :id, :name
 end
