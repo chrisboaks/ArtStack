@@ -49,6 +49,7 @@ Rails.application.routes.draw do
     resources :users, only: [:show, :update]
     resources :stacks, only: [:create, :destroy]
     resources :follows, only: [:create, :destroy]
+    resources :home, only: [:index]
   end
 
 
