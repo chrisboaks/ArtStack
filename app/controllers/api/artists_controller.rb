@@ -10,4 +10,16 @@ class Api::ArtistsController < ApplicationController
     render :show
   end
 
+  def update
+    @artist = Artist.find(params[:id])
+    to_follow = params[:follow]
+
+    if to_follow == 'true'
+      Follow.create(follower: current_user, followable: @artist)
+    else
+      follow = Follow.find_by(follower: current_user, followable: @artist)
+      follow.destroy
+    end
+    render :show
+  end
 end

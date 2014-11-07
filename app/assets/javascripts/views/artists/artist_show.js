@@ -50,19 +50,19 @@ ArtStack.Views.ArtistShow = Backbone.View.extend({
   },
 
   toggleFollow: function (event) {
-    var that = this;
     event.preventDefault();
 
     if (this.model.get('followed')) {
 
       $("button.follow-button").addClass("followed-false");
       $("button.follow-button").removeClass("followed-true");
+      this.model.set({ followed: false });
 
       $.ajax({
-        type: "DELETE",
-        url: "/api/follows/" + this.model.get("follow_id"),
-        success: function() {
-          that.model.fetch();
+        type: "PATCH",
+        url: "/api/artists/" + this.model.id,
+        data: {
+          follow: false
         }
       });
 
@@ -70,19 +70,15 @@ ArtStack.Views.ArtistShow = Backbone.View.extend({
 
       $("button.follow-button").addClass("followed-true");
       $("button.follow-button").removeClass("followed-false");
+      this.model.set({ followed: true });
 
       $.ajax({
-        type: "POST",
-        url: "/api/follows/",
+        type: "PATCH",
+        url: "/api/artists/" + this.model.id,
         data: {
-          followable_id: this.model.get('id'),
-          followable_type: 'Artist'
-        },
-        success: function() {
-          that.model.fetch();
+          follow: true
         }
       });
-
     }
   },
 
