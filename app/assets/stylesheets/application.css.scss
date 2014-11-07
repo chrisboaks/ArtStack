@@ -122,6 +122,14 @@ h3 {
   padding: 10px 0;
 }
 
+h4 {
+  display: inline;
+
+  a.uploader {
+    display: inline;
+  }
+}
+
 a {
   color: black;
   text-decoration: underline;

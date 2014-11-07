@@ -57,3 +57,11 @@ label.checkbox-label {
 ul.checkbox-list li {
   margin: 5px;
 }
+
+button.stack-button.stacked-false::after {
+  content: "Stack it!"
+}
+
+button.stack-button.stacked-true::after {
+  content: "Unstack it!"
+}

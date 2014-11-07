@@ -6,9 +6,8 @@ json.full_size_url @artwork.image.url
 
 json.height @artwork.scaled_height_by_width(300)
 
-json.artist do
-  json.extract! @artwork.artist, :id, :name
-end
+json.artist_name @artwork.artist.name
+json.artist_id @artwork.artist.id
 
 json.uploader_id @artwork.uploader.id
 json.uploader_moniker User.moniker(@artwork.uploader)

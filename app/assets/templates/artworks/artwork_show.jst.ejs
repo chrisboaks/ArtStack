@@ -8,9 +8,7 @@
 
   <figcaption>
     <h4>
-      <a href="#artworks/<%= artwork.get('id') %>">
-        <%= artwork.escape('title') %>
-      </a>
+      <%= artwork.escape('title') %>      
     </h4>
     <h4>
       <a href="#artists/<%= artwork.get('artist_id') %>">
@@ -18,9 +16,7 @@
       </a>
     </h4>
     <h4>
-      Uploader: <a href="#users/<%= artwork.get('uploader_id') %>">
-        <%= artwork.escape("uploader_moniker") %>
-      </a>
+      Uploader: <a class="uploader" href="#users/<%= artwork.get('uploader_id') %>"><%= artwork.escape("uploader_moniker") %></a>
     </h4>
   </figcaption>
 
