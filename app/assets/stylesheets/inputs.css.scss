@@ -1,11 +1,8 @@
 /* INPUTS */
 
-button, input {
-
-}
-
 input:not([type='submit']), textarea {
   border: 1px solid black;
+  font-size: 16px;
   display: block;
   padding: 8px;
   border-radius: 3px;
