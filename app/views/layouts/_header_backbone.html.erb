@@ -1,14 +1,10 @@
 <header class="group">
   <ul>
-    <li><a class="button" href="/#">Explore</a></li>
-    <% if logged_in? %>
-    <li><a class="button" href="<%= new_artwork_url %>">Add Art</a></li>
+    <li><a class="button" href="/#home">Home</a></li>
+    <li><a class="button" href="/#explore">Explore</a></li>
     <li><a class="button" href="/#users/<%= current_user.id %>">My Stacks</a></li>
+    <li><a class="button" href="<%= new_artwork_url %>">Add Art</a></li>
     <li><%= button_to "Log Out", session_url(current_user), method: :delete %></li>
-    <% else %>
-    <li><%= button_to "Log In", new_session_url, method: :get %></li>
-    <li><%= button_to "Sign Up", new_user_url, method: :get %></li>
-    <% end %>
   </ul>
 
   <div id="logo">

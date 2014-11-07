@@ -26,8 +26,6 @@ class User < ActiveRecord::Base
   has_many :stacked_artists, through: :stacked_works, source: :artist
   has_one :user_profile
 
-  # belongs_to :followable, :polymorphic => true
-  #
   has_many :follows, :foreign_key => :follower_id
   has_many :follows, :as => :followable
 
@@ -78,6 +76,20 @@ class User < ActiveRecord::Base
 
   def ensure_session_token
     self.session_token ||= SecureRandom.urlsafe_base64
+  end
+
+  def followed_artist_artwork_ids
+    artists = Follow.where(follower: self).where(followable_type: 'Artist').pluck(:followable_id)
+    Artwork.where(artist_id: artists)
+  end
+
+  def followed_user_artwork_ids
+    users = Follow.where(follower: self).where(followable_type: 'User').pluck(:followable_id)
+    Artwork.where(uploader_id: users).pluck(:id)
+  end
+
+  def home_artworks
+    Artwork.where(id: (followed_user_artwork_ids + followed_artist_artwork_ids).uniq)
   end
 
 end
