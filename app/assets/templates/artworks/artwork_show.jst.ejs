@@ -1,4 +1,4 @@
-<h1>Backbone Artwork!</h1>
+<h1><%= artwork.escape('title') %> </h1>
 
 <figure class="img-container-lrg" id="artwork-<%= artwork.get('id') %>">
 
@@ -7,9 +7,6 @@
   </a>
 
   <figcaption>
-    <h4>
-      <%= artwork.escape('title') %>      
-    </h4>
     <h4>
       <a href="#artists/<%= artwork.get('artist_id') %>">
         <%= artwork.escape('artist_name') %>
