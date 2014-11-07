@@ -19,9 +19,11 @@ ArtStack.Views.UserShow = Backbone.View.extend({
   render: function () {
     var renderedContent = this.template({ user: this.model });
     var profileContent = this.profileTemplate({ user: this.model });
-    
-    var followButton = this.followTemplate({ followable: this.model });
 
+    if (window.currentUserId !== this.model.id) {
+      var followButton = this.followTemplate({ followable: this.model });
+    }
+    
     this.$el.html(renderedContent);
     this.$el.find('#user-profile').append(profileContent);
     this.$el.prepend(followButton);

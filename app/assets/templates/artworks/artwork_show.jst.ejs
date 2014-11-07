@@ -2,7 +2,7 @@
 
 <figure class="img-container-lrg" id="artwork-<%= artwork.get('id') %>">
 
-  <a href="#artworks/<%= artwork.get('id') %>" class="art-image">
+  <a href="<%= artwork.get('full_size_url') %>" class="art-image">
     <img src="<%= artwork.escape('image') %>">
   </a>
 
