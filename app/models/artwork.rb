@@ -17,7 +17,7 @@
 
 class Artwork < ActiveRecord::Base
 
-  validates_presence_of :artist, :title, :art_type
+  validates_presence_of :artist, :title, :art_type, :image
   validates :art_type, inclusion: { in: %w(
     painting
     photograph
