@@ -26,4 +26,17 @@ class Api::ArtworksController < ApplicationController
     end
   end
 
+  def update
+    @artwork = Artwork.find(params[:id])
+    to_stack = params[:stack]
+
+    if to_stack == 'true'
+      Stack.create(user: current_user, artwork_id: params[:id])
+    else
+      stack = Stack.find_by(user_id: current_user.id, artwork_id: params[:id])
+      stack.destroy
+    end
+    render :show
+  end
+
 end

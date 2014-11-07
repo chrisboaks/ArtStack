@@ -26,9 +26,10 @@ johns = Artist.find_by(name: 'Jasper Johns')
 lewitt = Artist.find_by(name: 'Sol Lewitt')
 
 Artwork.create([
-  {image: 'http://erikaunapuu.files.wordpress.com/2013/05/picasso-girl-before-a-mirror.jpeg', uploader: me, artist: picasso, title: 'Girl Before a Mirror', art_type: 'painting'},
+  {image: 'http://erikaunapuu.files.wordpress.com/2013/05/picasso-girl-before-a-mirror.jpeg', uploader: me, artist: picasso, title: 'Girl Before a Mirror', art_type: 'painting'}])
 
 Artwork.create([
+  {image: 'http://erikaunapuu.files.wordpress.com/2013/05/picasso-girl-before-a-mirror.jpeg', uploader: me, artist: picasso, title: 'Girl Before a Mirror', art_type: 'painting'},
   {image: 'http://cp91279.biography.com/1000509261001/1000509261001_1910637818001_TDIH-Picasso-Guernica.jpg', uploader: me, artist: picasso, title: 'Guernica', art_type: 'painting'},
   {image: 'http://upload.wikimedia.org/wikipedia/commons/c/ce/Marcel_Duchamp.jpg', uploader: me, artist: duschamp, title: 'Fountain', art_type: 'sculpture'},
   {image: 'http://upload.wikimedia.org/wikipedia/en/c/c0/Duchamp_-_Nude_Descending_a_Staircase.jpg', uploader: me, artist: duschamp, title: 'Nude Descending a Staircase', art_type: 'painting'},

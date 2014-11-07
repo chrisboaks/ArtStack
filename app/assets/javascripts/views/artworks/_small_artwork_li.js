@@ -23,35 +23,37 @@ ArtStack.Views.SmallArtworkLI = Backbone.View.extend({
     return this;
   },
 
-  toggleStack: function (event) {
-    var that = this;
+  toggleStack: function () {
+
     event.preventDefault();
 
     if (this.model.get('stacked')) {
+
       $("button").addClass("stacked-false");
       $("button").removeClass("stacked-true");
+      this.model.set({ stacked: false });
+
       $.ajax({
-        type: "DELETE",
-        url: "/api/stacks/" + this.model.get("stack_id"),
-        success: function() {
-          that.model.fetch();
+        type: "PATCH",
+        url: "/api/artworks/" + this.model.id,
+        data: {
+          stack: false
         }
       });
 
     } else {
+
       $("button").addClass("stacked-true");
       $("button").removeClass("stacked-false");
+      this.model.set({ stacked: true });
+
       $.ajax({
-        type: "POST",
-        url: "/api/stacks/",
+        type: "PATCH",
+        url: "/api/artworks/" + this.model.id,
         data: {
-          artwork_id: this.model.get('id')
-        },
-        success: function() {
-          that.model.fetch();
+          stack: true
         }
       });
-
     }
   },
 
