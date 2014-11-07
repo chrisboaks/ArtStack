@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141105160622) do
+ActiveRecord::Schema.define(version: 20141107014801) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,17 @@ ActiveRecord::Schema.define(version: 20141105160622) do
   add_index "artworks", ["art_type"], name: "index_artworks_on_art_type", using: :btree
   add_index "artworks", ["artist_id"], name: "index_artworks_on_artist_id", using: :btree
   add_index "artworks", ["uploader_id"], name: "index_artworks_on_uploader_id", using: :btree
+
+  create_table "follows", force: true do |t|
+    t.integer  "follower_id"
+    t.integer  "followable_id"
+    t.string   "followable_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "follows", ["followable_id", "followable_type"], name: "index_follows_on_followable_id_and_followable_type", using: :btree
+  add_index "follows", ["follower_id"], name: "index_follows_on_follower_id", using: :btree
 
   create_table "stacks", force: true do |t|
     t.integer  "artwork_id"
