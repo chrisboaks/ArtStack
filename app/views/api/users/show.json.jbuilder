@@ -44,3 +44,10 @@ json.user_artworks do
 
   end
 end
+
+if Follow.find_by(follower: current_user, followable: @user)
+  json.followed true
+  json.follow_id Follow.find_by(follower: current_user, followable: @user).id
+else
+  json.followed false
+end
