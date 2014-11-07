@@ -54,8 +54,8 @@ ArtStack.Views.ArtistShow = Backbone.View.extend({
 
     if (this.model.get('followed')) {
 
-      $("button.follow-button").addClass("followed-false");
-      $("button.follow-button").removeClass("followed-true");
+      this.$("button.follow-button").addClass("followed-false");
+      this.$("button.follow-button").removeClass("followed-true");
       this.model.set({ followed: false });
 
       $.ajax({
@@ -68,8 +68,8 @@ ArtStack.Views.ArtistShow = Backbone.View.extend({
 
     } else {
 
-      $("button.follow-button").addClass("followed-true");
-      $("button.follow-button").removeClass("followed-false");
+      this.$("button.follow-button").addClass("followed-true");
+      this.$("button.follow-button").removeClass("followed-false");
       this.model.set({ followed: true });
 
       $.ajax({

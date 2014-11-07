@@ -3,7 +3,7 @@ git remote add heroku ___
 git push heroku master
 rm ~/.ssh/id_*
 heroku keys:add
-heroku push
+
 
 heroku keys:add
 heroku logs [-t]
