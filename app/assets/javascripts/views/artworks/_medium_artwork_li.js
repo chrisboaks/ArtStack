@@ -27,6 +27,10 @@ ArtStack.Views.MediumArtworkLI = Backbone.View.extend({
     event.preventDefault();
 
     if (this.model.get('stacked')) {
+
+      $("button").addClass("stacked-false");
+      $("button").removeClass("stacked-true");
+
       $.ajax({
         type: "DELETE",
         url: "/api/stacks/" + this.model.get("stack_id"),
@@ -36,6 +40,10 @@ ArtStack.Views.MediumArtworkLI = Backbone.View.extend({
       });
 
     } else {
+
+      $("button").addClass("stacked-true");
+      $("button").removeClass("stacked-false");
+
       $.ajax({
         type: "POST",
         url: "/api/stacks/",

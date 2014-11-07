@@ -5,7 +5,7 @@ ArtStack.Views.ArtworkShow = Backbone.View.extend({
   stackTemplate: JST['stacks/_stack_button'],
 
   initialize: function () {
-    this.listenTo(this.model, "sync", this.render);
+    this.listenToOnce(this.model, "sync", this.render);
   },
 
   events: {
@@ -25,6 +25,8 @@ ArtStack.Views.ArtworkShow = Backbone.View.extend({
     event.preventDefault();
 
     if (this.model.get('stacked')) {
+      $("button").addClass("stacked-false");
+      $("button").removeClass("stacked-true");
       $.ajax({
         type: "DELETE",
         url: "/api/stacks/" + this.model.get("stack_id"),
@@ -34,6 +36,8 @@ ArtStack.Views.ArtworkShow = Backbone.View.extend({
       });
 
     } else {
+      $("button").addClass("stacked-true");
+      $("button").removeClass("stacked-false");
       $.ajax({
         type: "POST",
         url: "/api/stacks/",

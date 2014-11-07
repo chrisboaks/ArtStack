@@ -13,7 +13,9 @@ class Artist < ActiveRecord::Base
   validates_presence_of :name
 
   has_many :artworks
+
   has_many :follows, :as => :followable
-  has_many :followers, through: :follows, class_name: 'User', source: :follower
+  # belongs_to :followable, :polymorphic => true
+  # has_many :followers, through: :follows, class_name: 'User', source: :follower
 
 end

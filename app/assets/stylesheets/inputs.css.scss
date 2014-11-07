@@ -62,3 +62,11 @@ button.stack-button.stacked-false::after {
 button.stack-button.stacked-true::after {
   content: "Unstack it!"
 }
+
+button.follow-button.followed-false::after {
+  content: "Follow!"
+}
+
+button.follow-button.followed-true::after {
+  content: "Unfollow!"
+}

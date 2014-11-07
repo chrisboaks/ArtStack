@@ -26,9 +26,10 @@ class User < ActiveRecord::Base
   has_many :stacked_artists, through: :stacked_works, source: :artist
   has_one :user_profile
 
+  # belongs_to :followable, :polymorphic => true
+  #
+  has_many :follows, :foreign_key => :follower_id
   has_many :follows, :as => :followable
-  has_many :followers, through: :follows, class_name: 'User', source: :follower
-  belongs_to :followable, :polymorphic => true
 
   attr_reader :password
 

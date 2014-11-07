@@ -16,3 +16,10 @@ json.artworks @artist.artworks do |artwork|
   json.height artwork.scaled_height_by_width(450)
 
 end
+
+if Follow.find_by(follower: current_user, followable: @artist)
+  json.followed true
+  json.follow_id Follow.find_by(follower: current_user, followable: @artist).id
+else
+  json.followed false
+end

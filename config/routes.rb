@@ -48,6 +48,7 @@ Rails.application.routes.draw do
     resources :artists, only: [:show, :index]
     resources :users, only: :show
     resources :stacks, only: [:create, :destroy]
+    resources :follows, only: [:create, :destroy]
   end
 
 
