@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+
   def new
     render :new, :layout => false
   end
@@ -27,6 +28,7 @@ class SessionsController < ApplicationController
       flash.now[:errors] = user.errors.full_messages.join(', ')
       render :new, :layout => false
     end
+    
   end
 
   def destroy

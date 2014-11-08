@@ -22,4 +22,5 @@ class Api::ArtistsController < ApplicationController
     end
     render :show
   end
+
 end

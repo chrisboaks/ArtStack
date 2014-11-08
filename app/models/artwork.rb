@@ -13,6 +13,7 @@
 #  image_content_type :string(255)
 #  image_file_size    :integer
 #  image_updated_at   :datetime
+#  dimensions         :string(255)
 #
 
 class Artwork < ActiveRecord::Base

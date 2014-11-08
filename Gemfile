@@ -35,9 +35,9 @@ gem 'bcrypt', '~> 3.1.7'
 # gem 'capistrano-rails', group: :development
 
 
-
-gem "paperclip", "~> 4.2"
-gem "aws-sdk"
+gem 'thin'
+gem 'paperclip', '~> 4.2'
+gem 'aws-sdk'
 gem 'annotate', '~> 2.6.5'
 gem 'backbone-on-rails'
 gem 'omniauth-facebook'

@@ -7,27 +7,26 @@
 #            new_session GET    /sessions/new(.:format)                     sessions#new
 #                session DELETE /sessions/:id(.:format)                     sessions#destroy
 # edit_user_user_profile GET    /users/:user_id/user_profile/edit(.:format) user_profiles#edit
-#      user_user_profile GET    /users/:user_id/user_profile(.:format)      user_profiles#show
-#                        PATCH  /users/:user_id/user_profile(.:format)      user_profiles#update
+#      user_user_profile PATCH  /users/:user_id/user_profile(.:format)      user_profiles#update
 #                        PUT    /users/:user_id/user_profile(.:format)      user_profiles#update
 #         backbone_index GET    /backbone(.:format)                         backbone#index
-#                 stacks POST   /stacks(.:format)                           stacks#create
-#                  stack DELETE /stacks/:id(.:format)                       stacks#destroy
 #               artworks POST   /artworks(.:format)                         artworks#create
 #            new_artwork GET    /artworks/new(.:format)                     artworks#new
 #           api_artworks GET    /api/artworks(.:format)                     api/artworks#index {:format=>:json}
 #            api_artwork GET    /api/artworks/:id(.:format)                 api/artworks#show {:format=>:json}
+#                        PATCH  /api/artworks/:id(.:format)                 api/artworks#update {:format=>:json}
+#                        PUT    /api/artworks/:id(.:format)                 api/artworks#update {:format=>:json}
 #            api_artists GET    /api/artists(.:format)                      api/artists#index {:format=>:json}
 #             api_artist GET    /api/artists/:id(.:format)                  api/artists#show {:format=>:json}
+#                        PATCH  /api/artists/:id(.:format)                  api/artists#update {:format=>:json}
+#                        PUT    /api/artists/:id(.:format)                  api/artists#update {:format=>:json}
 #               api_user GET    /api/users/:id(.:format)                    api/users#show {:format=>:json}
+#                        PATCH  /api/users/:id(.:format)                    api/users#update {:format=>:json}
+#                        PUT    /api/users/:id(.:format)                    api/users#update {:format=>:json}
+#         api_home_index GET    /api/home(.:format)                         api/home#index {:format=>:json}
 #
 
 Rails.application.routes.draw do
-
-  # root to: "sessions#new"
-  # root to: "artists#index"
-  # resources :artworks, only: [:new, :create, :show, :index]
-  # resources :artists, only: [:show, :index]
 
   root to: "backbone#index"
 
@@ -36,7 +35,7 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
 
   resources :users, only: [] do
-    resource :user_profile, only: [:edit, :update, :show]
+    resource :user_profile, only: [:edit, :update]
   end
 
   resources :backbone, only: :index
@@ -47,11 +46,8 @@ Rails.application.routes.draw do
     resources :artworks, only: [:show, :index, :update]
     resources :artists, only: [:show, :index, :update]
     resources :users, only: [:show, :update]
-    resources :stacks, only: [:create, :destroy]
-    resources :follows, only: [:create, :destroy]
     resources :home, only: [:index]
   end
-
 
 end
 

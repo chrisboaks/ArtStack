@@ -1,22 +1,16 @@
 <% var profile = user.user_profile %>
-
 <% if(profile) { %>
+  <ul class="user-profile">
+    <% for(var property in profile.attributes) { %>
+      <li>
+        <div class="attribute-name">
+          <%= property.split('_').join(' ') %>:
+        </div>
 
-<ul class="user-profile">
-  <% for(var property in profile.attributes) { %>
-    <li>
-      <div class="attribute-name">
-        <%= property.split('_').join(' ') %>:
-      </div>
-
-      <div class="attribute-value">
-        <%= profile.get(property) %>
-      </div>
-    </li>
-
-  <% } %>
-
-</ul>
-
-
+        <div class="attribute-value">
+          <%= profile.get(property) %>
+        </div>
+      </li>
+    <% } %>
+  </ul>
 <% } %>

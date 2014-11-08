@@ -8,6 +8,13 @@
     text-align: center;
   }
 
+  main {
+    width: 600px;
+    padding: 50px;
+    background: white;
+    position: relative;
+  }
+
   h1 {
     font-size: 20px;
   }
@@ -34,11 +41,11 @@
     margin: 0 auto;
     text-align: center;
     padding-bottom: 50px;
-  }
 
-  li {
-    text-align: left;
-    margin: 2px;
+    li {
+      text-align: left;
+      margin: 2px;
+    }
   }
 
   input, button {
@@ -79,18 +86,11 @@
     font-weight: 100;
   }
 
-
-  body {
-    overflow: hidden;
-    height: 100%;
-    width: 100%;
-  }
-
-  main {
-    width: 600px;
-    padding: 50px;
-    background: white;
-    position: relative;
+  br.separator {
+    border-top: 1px solid #ccc;
+    height: 1px;
+    margin: 20px auto;
+    width: 420px;
   }
 
   .friendly {
