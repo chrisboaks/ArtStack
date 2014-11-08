@@ -16,7 +16,6 @@
   font-weight: bold;
 }
 
-
 div.devmode {                               //delete?
   display: block;
   width: 400px;
@@ -25,47 +24,8 @@ div.devmode {                               //delete?
   background: red;
 }
 
-
 #welcome-user {
   display: relative;
   float: right;
   padding: 5px 10px 0 0;
-}
-
-br.separator {
-  border-top: 1px solid #ccc;
-  height: 1px;
-  margin: 20px auto;
-  width: 420px;
-}
-
-section#user-profile {
-
-  ul.user-profile {
-    display: inline-block;
-    margin: auto;
-    text-align: center;
-    font-size: 16px;
-    padding: 20px;
-    padding-top:10px;
-
-    li {
-      text-align: left;
-      padding: 5px 0;
-    }
-
-    div.attribute-name {
-      text-transform: capitalize;
-      display: inline-block;
-      width: 100px;
-      vertical-align: top;
-    }
-
-    div.attribute-value {
-      display: inline-block;
-      font-weight: bold;
-      width: 750px;
-    }
-
-  }
 }

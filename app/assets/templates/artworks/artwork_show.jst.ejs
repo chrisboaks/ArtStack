@@ -7,14 +7,17 @@
   </a>
 
   <figcaption>
+
     <h4>
       <a href="#artists/<%= artwork.get('artist_id') %>">
         <%= artwork.escape('artist_name') %>
       </a>
     </h4>
+
     <h4>
       Uploader: <a class="uploader" href="#users/<%= artwork.get('uploader_id') %>"><%= artwork.escape("uploader_moniker") %></a>
     </h4>
+
   </figcaption>
 
 </figure>
