@@ -20,66 +20,13 @@ ArtStack.Views.ArtistShow = Backbone.View.extend({
     this.$el.html(renderedContent);
     this.$el.prepend(followButton);
 
-    var that = this;
-    var uls = $('ul.artist-show-list').toArray();
-
     if (this.model.artworks) {
       this.model.artworks.each(function (artwork) {
-        var view = new ArtStack.Views.MediumArtworkLI({ model: artwork });
-        that.subviews.push(view);
-
-        var shortest_ul_index = that.ul_lengths[0] < that.ul_lengths[1] ? 0 : 1;
-
-        $(uls[shortest_ul_index]).prepend(view.render().$el);
-        that.ul_lengths[shortest_ul_index] += artwork.get('height');
-
-      });
+        this.addMediumArtwork(artwork);
+      }.bind(this));
     };
 
     return this;
-  },
-
-  addArtwork: function (artwork) {
-    var view = new ArtStack.Views.MediumArtworkLI({ model: artwork });
-    this.subviews.push(view);
-
-    var shortest_ul_index = this.ul_lengths[0] < this.ul_lengths[1] ? 0 : 1;
-
-    $(uls[shortest_ul_index]).prepend(view.render().$el);
-    that.ul_lengths[shortest_ul_index] += artwork.get('height');
-  },
-
-  toggleFollow: function (event) {
-    event.preventDefault();
-
-    if (this.model.get('followed')) {
-
-      this.$("button.follow-button").addClass("followed-false");
-      this.$("button.follow-button").removeClass("followed-true");
-      this.model.set({ followed: false });
-
-      $.ajax({
-        type: "PATCH",
-        url: "/api/artists/" + this.model.id,
-        data: {
-          follow: false
-        }
-      });
-
-    } else {
-
-      this.$("button.follow-button").addClass("followed-true");
-      this.$("button.follow-button").removeClass("followed-false");
-      this.model.set({ followed: true });
-
-      $.ajax({
-        type: "PATCH",
-        url: "/api/artists/" + this.model.id,
-        data: {
-          follow: true
-        }
-      });
-    }
   },
 
 });

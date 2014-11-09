@@ -1,3 +1,32 @@
+Backbone.View.prototype.addSmallArtwork = function (artwork) {
+
+  var $uls = this.$('ul');
+  var view = new ArtStack.Views.SmallArtworkLI({ model: artwork });
+  this.subviews.push(view);
+  var shortest_ul_index = 0;
+
+  for (var i = 0; i < 3; i++) {
+    if (this.ul_lengths[shortest_ul_index] > this.ul_lengths[i]) {
+      shortest_ul_index = i;
+    }
+  }
+
+  $uls.eq(shortest_ul_index).prepend(view.render().$el);
+  this.ul_lengths[shortest_ul_index] += artwork.get('height');
+
+};
+
+Backbone.View.prototype.addMediumArtwork = function (artwork) {
+  var uls = $('ul.artist-show-list')
+  var view = new ArtStack.Views.MediumArtworkLI({ model: artwork });
+  this.subviews.push(view);
+
+  var shortest_ul_index = this.ul_lengths[0] < this.ul_lengths[1] ? 0 : 1;
+
+  $(uls[shortest_ul_index]).prepend(view.render().$el);
+  this.ul_lengths[shortest_ul_index] += artwork.get('height');
+};
+
 Backbone.View.prototype.toggleStack = function () {
 
   event.preventDefault();
@@ -30,23 +59,37 @@ Backbone.View.prototype.toggleStack = function () {
       }
     });
   }
-
 };
 
-Backbone.View.prototype.addSmallArtwork = function (artwork) {
+Backbone.View.prototype.toggleFollow = function (event) {
+  event.preventDefault();
 
-  var $uls = this.$('ul');
-  var view = new ArtStack.Views.SmallArtworkLI({ model: artwork });
-  this.subviews.push(view);
-  var shortest_ul_index = 0;
+  if (this.model.get('followed')) {
 
-  for (var i = 0; i < 3; i++) {
-    if (this.ul_lengths[shortest_ul_index] > this.ul_lengths[i]) {
-      shortest_ul_index = i;
-    }
+    this.$("button.follow-button").addClass("followed-false");
+    this.$("button.follow-button").removeClass("followed-true");
+    this.model.set({ followed: false });
+
+    $.ajax({
+      type: "PATCH",
+      url: this.model.urlRoot + "/" + this.model.id,
+      data: {
+        follow: false
+      }
+    });
+
+  } else {
+
+    this.$("button.follow-button").addClass("followed-true");
+    this.$("button.follow-button").removeClass("followed-false");
+    this.model.set({ followed: true });
+
+    $.ajax({
+      type: "PATCH",
+      url: this.model.urlRoot + "/" + this.model.id,
+      data: {
+        follow: true
+      }
+    });
   }
-
-  $uls.eq(shortest_ul_index).prepend(view.render().$el);
-  this.ul_lengths[shortest_ul_index] += artwork.get('height');
-
 };

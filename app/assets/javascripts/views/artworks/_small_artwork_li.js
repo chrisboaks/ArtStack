@@ -18,7 +18,6 @@ ArtStack.Views.SmallArtworkLI = Backbone.View.extend({
     var renderedContent = this.template({ artwork: this.model });
     var button = this.stackTemplate({ artwork: this.model });
     this.$el.html(renderedContent);
-
     this.$(".art-image").append(button);
     return this;
   },
