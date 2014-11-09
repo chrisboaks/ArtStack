@@ -22,38 +22,4 @@ ArtStack.Views.MediumArtworkLI = Backbone.View.extend({
     return this;
   },
 
-  toggleStack: function () {
-
-    event.preventDefault();
-
-    if (this.model.get('stacked')) {
-
-      this.$("button").addClass("stacked-false");
-      this.$("button").removeClass("stacked-true");
-      this.model.set({ stacked: false });
-
-      $.ajax({
-        type: "PATCH",
-        url: "/api/artworks/" + this.model.id,
-        data: {
-          stack: false
-        }
-      });
-
-    } else {
-
-      this.$("button").addClass("stacked-true");
-      this.$("button").removeClass("stacked-false");
-      this.model.set({ stacked: true });
-
-      $.ajax({
-        type: "PATCH",
-        url: "/api/artworks/" + this.model.id,
-        data: {
-          stack: true
-        }
-      });
-    }
-  },
-
 });

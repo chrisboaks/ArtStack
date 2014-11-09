@@ -14,4 +14,5 @@ class Stack < ActiveRecord::Base
   belongs_to :user
 
   validates_presence_of :user_id, :artwork_id
+  validates_uniqueness_of :artwork_id, scope: :user_id
 end
