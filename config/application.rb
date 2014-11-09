@@ -24,6 +24,8 @@ module ArtStack
 
     config.assets.precompile += %w(DroidSans.ttf DroidSans-Bold.ttf)
 
+    config.middleware.use Rack::Deflater
+
     config.paperclip_defaults = {
       :storage => :s3,
       :s3_protocol => 'http',
