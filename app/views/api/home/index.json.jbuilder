@@ -2,8 +2,8 @@ current_user_stacked_work_ids = (current_user ? current_user.stacks.map(&:artwor
 
 json.array! @artworks do |artwork|
   json.extract! artwork, :id, :title, :image, :art_type, :created_at
-  json.image artwork.image.url(:small)
-  json.height artwork.scaled_height_by_width(300)
+  json.image_small artwork.image.url(:small)
+  json.height_small artwork.scaled_height_by_width(300)
 
   json.artist_name artwork.artist.name
   json.artist_id artwork.artist.id

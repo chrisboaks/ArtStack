@@ -5,10 +5,11 @@ ArtStack.Routers.Router = Backbone.Router.extend({
   },
 
   routes: {
-    "": "artworksIndex",
+    "": "artworksIndexSmall",
     "home": "userHome",
-    "explore": "artworksIndex",
-    "_=_": "artworksIndex",           // For seamless Facebook logins
+    "explore": "artworksIndexSmall",
+    "explore-large": "artworksIndexLarge",
+    "_=_": "artworksIndexSmall",           // For seamless Facebook logins
     "artists/:id": "artistShow",
     "artworks/:id": "artworkShow",
     "users/:id": "userShow",
@@ -20,9 +21,15 @@ ArtStack.Routers.Router = Backbone.Router.extend({
     this._swapview(showView);
   },
 
-  artworksIndex: function () {
+  artworksIndexSmall: function () {
     var artworks = ArtStack.artworks;
-    var indexView = new ArtStack.Views.ArtworksIndex({ collection: artworks });
+    var indexView = new ArtStack.Views.ArtworksIndexSmall({ collection: artworks });
+    this._swapview(indexView);
+  },
+
+  artworksIndexLarge: function () {
+    var artworks = ArtStack.artworks;
+    var indexView = new ArtStack.Views.ArtworksIndexLarge({ collection: artworks });
     this._swapview(indexView);
   },
 

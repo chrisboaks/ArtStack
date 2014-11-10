@@ -61,12 +61,26 @@ div.img-container-med {
 }
 
 div.img-container-lrg {
+  display: inline-block;
+  float: left;
   max-width: 860px;
   padding: 20px;
 }
 
-ul.artworks-index {
+ul.artworks-index-small {
   width: 300px;
+  display: block;
+  float: left;
+}
+
+ul.artworks-index-medium {
+  width: 450px;
+  display: block;
+  float: left;
+}
+
+ul.artworks-index-large {
+  width: 900px;
   display: block;
   float: left;
 }

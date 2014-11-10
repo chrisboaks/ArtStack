@@ -21,9 +21,7 @@ ArtStack.Views.ArtistShow = Backbone.View.extend({
     this.$el.prepend(followButton);
 
     if (this.model.artworks) {
-      this.model.artworks.each(function (artwork) {
-        this.addMediumArtwork(artwork);
-      }.bind(this));
+      this.model.artworks.each(this.addMediumArtwork.bind(this));
     };
 
     return this;

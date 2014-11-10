@@ -29,9 +29,7 @@ ArtStack.Views.UserShow = Backbone.View.extend({
     this.$el.prepend(followButton);
 
     if (this.model.user_artworks) {
-      this.model.user_artworks.each(function (artwork) {
-        this.addMediumArtwork(artwork);
-      }.bind(this));
+      this.model.user_artworks.each(this.addMediumArtwork.bind(this));
     };
 
     return this;

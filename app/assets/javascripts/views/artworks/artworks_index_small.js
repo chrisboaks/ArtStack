@@ -1,6 +1,6 @@
-ArtStack.Views.ArtworksIndex = Backbone.View.extend({
+ArtStack.Views.ArtworksIndexSmall = Backbone.View.extend({
 
-  template: JST['artworks/artworks_index'],
+  template: JST['artworks/artworks_index_small'],
 
   initialize: function () {
     this.listenTo(this.collection, "add", this.addSmallArtwork);
@@ -11,7 +11,6 @@ ArtStack.Views.ArtworksIndex = Backbone.View.extend({
   render: function () {
     var renderedContent = this.template({ artworks: this.collection });
     this.$el.html(renderedContent);
-    var that = this;
 
     this.collection.each(this.addSmallArtwork.bind(this));
 
