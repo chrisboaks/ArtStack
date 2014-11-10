@@ -17,13 +17,13 @@ Backbone.View.prototype.addSmallArtwork = function (artwork) {
 
 Backbone.View.prototype.addMediumArtwork = function (artwork) {
 
-  var uls = this.$('ul.artworks-index-medium');
+  var $uls = this.$('ul.artworks-index-medium');
   var view = new ArtStack.Views.MediumArtworkLI({ model: artwork });
   this.subviews.push(view);
 
   var shortest_ul_index = this.ul_lengths[0] < this.ul_lengths[1] ? 0 : 1;
 
-  $(uls[shortest_ul_index]).prepend(view.render().$el);
+  $uls.eq(shortest_ul_index).prepend(view.render().$el);
   this.ul_lengths[shortest_ul_index] += artwork.get('height');
 };
 
