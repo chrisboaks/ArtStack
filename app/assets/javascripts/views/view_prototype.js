@@ -17,7 +17,7 @@ Backbone.View.prototype.addSmallArtwork = function (artwork) {
 
 Backbone.View.prototype.addMediumArtwork = function (artwork) {
 
-  var uls = $('ul.artworks-index-medium')
+  var uls = this.$('ul.artworks-index-medium');
   var view = new ArtStack.Views.MediumArtworkLI({ model: artwork });
   this.subviews.push(view);
 
@@ -25,12 +25,11 @@ Backbone.View.prototype.addMediumArtwork = function (artwork) {
 
   $(uls[shortest_ul_index]).prepend(view.render().$el);
   this.ul_lengths[shortest_ul_index] += artwork.get('height');
-  console.log(this.ul_lengths, artwork.id)
 };
 
 Backbone.View.prototype.addLargeArtwork = function (artwork) {
 
-  var $ul = $('ul.artworks-index-large')
+  var $ul = this.$('ul.artworks-index-large');
   var view = new ArtStack.Views.LargeArtworkLI({ model: artwork });
   this.subviews.push(view);
 
