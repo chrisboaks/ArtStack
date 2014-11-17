@@ -11,6 +11,20 @@
   <% require_logout %>
   <img class="landing" src="<%= asset_path 'backgrounds/bigbenblursized.jpg' %>"></img>
 
+  <section>
+    <form action="<%= sessions_url %>" method="post">
+      <%= render "layouts/auth_token" %>
+
+      <input type="hidden" name="user[email]" value="Guest">
+      <input type="hidden" name="user[password]" value="guestguest">
+
+      <button class="guest-login">
+        Just taking a look? <br>
+        Sign in as Guest
+      </button>
+    </form>
+  </section>
+
   <main>
 
     <section class="error"><%= flash[:errors] %></section>

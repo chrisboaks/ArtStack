@@ -107,4 +107,23 @@
     text-align: center;
 		margin-top: -40px;
 	}
+
+  button.guest-login {
+    position: absolute;
+    background: red;
+    color: white;
+    right: -15px;
+    top: 30%;
+    margin-top: -35px;
+    z-index: 3;
+    height: 70px;
+    width: 180px;
+    padding: 0 20px;
+    text-align: left;
+
+    &:hover {
+      background: #9B0000;
+      text-shadow: none;
+    }
+  }
 }
