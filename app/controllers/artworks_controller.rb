@@ -1,5 +1,4 @@
 class ArtworksController < ApplicationController
-
   def new
     @artwork = Artwork.new
     render :new
@@ -30,8 +29,8 @@ class ArtworksController < ApplicationController
   end
 
   private
+
   def artwork_params
     params.require(:artwork).permit(:id, :title, :art_type, :image)
   end
-
 end

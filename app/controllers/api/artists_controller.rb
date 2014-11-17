@@ -1,5 +1,4 @@
 class Api::ArtistsController < ApplicationController
-
   def index
     @artists = Artist.all
     render :index
@@ -22,5 +21,4 @@ class Api::ArtistsController < ApplicationController
     end
     render :show
   end
-
 end

@@ -1,7 +1,6 @@
 class SessionsController < ApplicationController
-
   def new
-    render :new, :layout => false
+    render :new, layout: false
   end
 
   def create
@@ -17,7 +16,7 @@ class SessionsController < ApplicationController
       redirect_to "/auth/facebook"
     elsif @user
       flash.now[:errors] = "Incorrect password.  Please try again."
-      render :new, :layout => false
+      render :new, layout: false
     elsif User.new(email: email, password: password).save
       login(User.find_by(email: email))
       flash[:notice] = "New user successfully created!"
@@ -26,14 +25,13 @@ class SessionsController < ApplicationController
       user = User.new(email: email, password: password)
       user.valid?
       flash.now[:errors] = user.errors.full_messages.join(', ')
-      render :new, :layout => false
+      render :new, layout: false
     end
-    
+
   end
 
   def destroy
     logout
     redirect_to new_session_url
   end
-
 end

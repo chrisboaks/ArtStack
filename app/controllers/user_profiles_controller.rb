@@ -1,5 +1,4 @@
 class UserProfilesController < ApplicationController
-
   def edit
     @user_profile = UserProfile.find_or_initialize_by(user: current_user)
     render :edit
@@ -16,7 +15,7 @@ class UserProfilesController < ApplicationController
   end
 
   private
-  
+
   def user_profile_params
     params.require(:user_profile).permit(
       :username,
@@ -34,5 +33,4 @@ class UserProfilesController < ApplicationController
       :website
     )
   end
-
 end

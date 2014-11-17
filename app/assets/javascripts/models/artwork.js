@@ -6,7 +6,7 @@ ArtStack.Models.Artwork = Backbone.Model.extend({
     if (json.artist) {
       this.artist = new ArtStack.Models.Artist(json.artist);
       delete json.artist;
-    };
+    }
 
     return json;
   },

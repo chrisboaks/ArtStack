@@ -40,14 +40,14 @@ ArtStack.Routers.Router = Backbone.Router.extend({
   },
 
   userShow: function (id) {
-    var user = new ArtStack.Models.User({ id: id })
-    user.fetch()
+    var user = new ArtStack.Models.User({ id: id });
+    user.fetch();
     var showView = new ArtStack.Views.UserShow({ model: user });
     this._swapview(showView);
   },
 
   userHome: function () {
-    var artworks = new ArtStack.Collections.Home;
+    var artworks = new ArtStack.Collections.Home();
     artworks.fetch();
     var indexView = new ArtStack.Views.UserHome({ collection: artworks });
     this._swapview(indexView);

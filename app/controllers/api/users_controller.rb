@@ -1,5 +1,4 @@
 class Api::UsersController < ApplicationController
-
   def show
     @user = User.includes(
       :stacked_works,
@@ -24,5 +23,4 @@ class Api::UsersController < ApplicationController
     end
     render :show
   end
-
 end

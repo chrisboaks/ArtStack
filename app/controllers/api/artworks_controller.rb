@@ -1,5 +1,4 @@
 class Api::ArtworksController < ApplicationController
-
   def index
     @artworks = Artwork.includes(:artist).order("id ASC").all
     render :index
@@ -20,7 +19,7 @@ class Api::ArtworksController < ApplicationController
     if @artwork.save
       render :show
     else
-      render :json =>
+      render json:
         { error: "Sorry, there was a problem with that artwork." },
         status: :unprocessable_entity
     end
@@ -38,5 +37,4 @@ class Api::ArtworksController < ApplicationController
     end
     render :show
   end
-
 end
