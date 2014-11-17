@@ -27,7 +27,7 @@
   font-weight: bold;
 }
 
-html, body, div, span, header, footer, menu, nav, section, input,
+html, body, div, span, header, footer, menu, nav, section,
 h1, h2, h3, h4, p, a, img, ul, li, form, label, caption, article, button,
 li, ul, figure {
   margin: 0;
@@ -55,11 +55,20 @@ body {
 }
 
 button, a, input {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: #111;
+  background: transparent;
+  text-decoration: inherit;
+  font-size: 100%;
+  font: inherit;
+  font-family: "Droid Sans";
   cursor: pointer;
   outline: none
 }
 
-textarea, input {
+textarea {
   outline: none;
 }
 

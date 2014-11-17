@@ -44,6 +44,14 @@ label.input {
 
 input[type="checkbox"] {
   display: inline;
+  height: 15px;
+  width: 15px;
+  font-size: 0px;
+
+  &:focus {
+    border: 0;
+    box-shadow: none;
+  }
 }
 
 label.checkbox-label {
