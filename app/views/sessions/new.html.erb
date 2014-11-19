@@ -19,7 +19,7 @@
       <input type="hidden" name="user[email]" value="Guest">
       <input type="hidden" name="user[password]" value="guestguest">
 
-      <button class="guest-login">
+      <button id="guest-login">
         Just taking a look? <br>
         Sign in as Guest
       </button>
@@ -78,6 +78,14 @@
     </section>
 
     <h3>No account?  No problem!<br>Just sign in above and we'll create a new account for you.</h3>
+
+    <script charset="utf-8">
+      $(function () {
+        setTimeout(function () {
+          document.getElementById('guest-login').style.right = "-15px";
+        }, 250);
+      });
+    </script>
 
   </main>
 </body>

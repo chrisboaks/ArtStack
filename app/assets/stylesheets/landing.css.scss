@@ -108,11 +108,11 @@
 		margin-top: -40px;
 	}
 
-  button.guest-login {
+  #guest-login {
     position: absolute;
     background: red;
     color: white;
-    right: -15px;
+    right: -180px;
     top: 30%;
     margin-top: -35px;
     z-index: 3;
@@ -120,6 +120,7 @@
     width: 180px;
     padding: 0 20px;
     text-align: left;
+    transition: right 1.5s;
 
     &:hover {
       background: #9B0000;
