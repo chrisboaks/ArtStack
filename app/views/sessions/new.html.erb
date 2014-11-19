@@ -5,11 +5,12 @@
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
 </head>
 
 <body class="landing-body">
   <% require_logout %>
-  <img class="landing" src="<%= asset_path 'backgrounds/bigbenblursized.jpg' %>"></img>
+  <img class="landing" src="<%= asset_path 'backgrounds/bigbenblursized.jpg' %>" alt="Background">
 
   <section>
     <form action="<%= sessions_url %>" method="post">
@@ -29,7 +30,7 @@
 
     <section class="error"><%= flash[:errors] %></section>
 
-    <img class="logo" src="<%= asset_path 'logo-large.png' %>"></img>
+    <img class="logo" src="<%= asset_path 'logo-large.png' %>" alt="ArtStack">
 
     <h1 class="title">
       The world's favorite art
