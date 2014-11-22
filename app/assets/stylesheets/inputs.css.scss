@@ -15,10 +15,6 @@ input:not([type='submit']), textarea {
   }
 }
 
-input[type='checkbox'] {
-  display: inline;
-}
-
 a.button, button, input[type='submit'] {
   display: inline-block;
   text-decoration: none;
