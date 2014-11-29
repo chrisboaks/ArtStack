@@ -14,3 +14,5 @@ The site is a Ruby on Rails app that interacts with a PostgreSQL database to sav
 - More flash msgs
 - Notifications
 - Emails/texts (twilio)
+
+[![Analytics](https://ga-beacon.appspot.com/UA-57200015-1/chrisboaks/artstack)](https://github.com/igrigorik/ga-beacon) 
