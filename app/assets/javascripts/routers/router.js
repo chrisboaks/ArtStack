@@ -8,7 +8,8 @@ ArtStack.Routers.Router = Backbone.Router.extend({
     "": "artworksIndexSmall",
     "home": "userHome",
     "explore": "artworksIndexSmall",
-    "explore-large": "artworksIndexLarge",
+    "explore-list": "artworksIndexLarge",
+    "explore-grid": "artworksIndexSmall",
     "_=_": "artworksIndexSmall",           // For seamless Facebook logins
     "artists/:id": "artistShow",
     "artworks/:id": "artworkShow",
@@ -22,12 +23,16 @@ ArtStack.Routers.Router = Backbone.Router.extend({
   },
 
   artworksIndexSmall: function () {
+    $('.list-layout-button').removeClass('active');
+    $('.grid-layout-button').addClass('active');
     var artworks = ArtStack.artworks;
     var indexView = new ArtStack.Views.ArtworksIndexSmall({ collection: artworks });
     this._swapview(indexView);
   },
 
   artworksIndexLarge: function () {
+    $('.grid-layout-button').removeClass('active');
+    $('.list-layout-button').addClass('active');
     var artworks = ArtStack.artworks;
     var indexView = new ArtStack.Views.ArtworksIndexLarge({ collection: artworks });
     this._swapview(indexView);

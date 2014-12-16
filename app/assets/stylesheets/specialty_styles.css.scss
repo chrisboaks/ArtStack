@@ -29,3 +29,25 @@ div.devmode {                               //delete?
   float: right;
   padding: 5px 10px 0 0;
 }
+
+a.layout-button {
+  height: 17px;
+  width: 17px;
+  overflow: hidden;
+  float: right;
+  background: image-url("icons/grid-icons.png") no-repeat;
+  background-position-y: -17px;
+  margin: 3px;
+}
+
+a.layout-button.active {
+  background-position-y: 0;
+}
+
+a.grid-layout-button {
+  background-position-x: 0;
+}
+
+a.list-layout-button {
+  background-position-x: -17px;
+}
