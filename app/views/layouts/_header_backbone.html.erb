@@ -13,11 +13,15 @@
 
 </header>
 
-<div id="welcome-user" class="group">
-Welcome, <a href="<%= edit_user_user_profile_url(current_user) %>"><%= user_moniker(current_user) %></a>!
+<div class="group">
+  <div id="welcome-user">
+  Welcome, <a href="<%= edit_user_user_profile_url(current_user) %>"><%= user_moniker(current_user) %></a>!
+  </div>
 </div>
 
 
-<a class="layout-button grid-layout-button" href="#explore-grid"></a>
-
-<a class="layout-button list-layout-button" href="#explore-list"></a>
+<div id="layout-buttons">
+  <h6>Layout:</h6>
+  <a class="layout-button grid-layout-button" href="#explore-grid"></a>
+  <a class="layout-button list-layout-button" href="#explore-list"></a>
+</div>

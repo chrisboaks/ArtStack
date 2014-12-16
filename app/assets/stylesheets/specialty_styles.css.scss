@@ -30,14 +30,35 @@ div.devmode {                               //delete?
   padding: 5px 10px 0 0;
 }
 
+#layout-buttons {
+  float: right;
+  margin: 10px;
+  // border: 1px solid red;
+  height: 17px;
+  vertical-align: middle;
+
+
+
+  h6 {
+    margin-right: 2px;
+    height: 17px;
+    vertical-align: middle;
+    font-size: 12px;
+    // font-weight: bold;
+    display: inline-block;
+    color: #111;
+  }
+}
+
 a.layout-button {
+  display: inline-block;
+  // float: left;
   height: 17px;
   width: 17px;
   overflow: hidden;
-  float: right;
   background: image-url("icons/grid-icons.png") no-repeat;
   background-position-y: -17px;
-  margin: 3px;
+  margin: 0 0 0 3px;
 }
 
 a.layout-button.active {
