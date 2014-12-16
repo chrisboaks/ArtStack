@@ -1,6 +1,6 @@
 /* INPUTS */
 
-input:not([type='submit']), textarea {
+input:not([type='submit']), textarea, select {
   border: 1px solid black;
   font-size: 16px;
   display: block;
@@ -8,6 +8,7 @@ input:not([type='submit']), textarea {
   border-radius: 3px;
   cursor: text;
   outline: none;
+  width: 320px;
 
   &:focus {
     border: 1px solid green;
